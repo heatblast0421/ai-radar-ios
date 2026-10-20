@@ -2,7 +2,7 @@
 
 ## 1. Collecting (the "backend")
 
-A GitHub Actions workflow (`.github/workflows/ingest.yml`) wakes up every 15 minutes. It only runs the sources that are due, according to `backend/config/sources.toml`:
+A GitHub Actions workflow (`.github/workflows/ingest.yml`) is scheduled every 15 minutes (GitHub may delay scheduled runs at busy times, so expect every 15–30 minutes). It only runs the sources that are due, according to `backend/config/sources.toml`:
 
 | Job | Default interval | Sources |
 |---|---|---|

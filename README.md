@@ -38,7 +38,7 @@ Your personal AI intelligence app for iPhone. AI Radar continuously collects wha
 
 ## Everyday operation
 
-Nothing. The pipeline runs by itself every 15 minutes on GitHub's servers. Your Mac does not need to be on. With a free Apple ID, you re-install the app from Xcode once every 7 days (see the iPhone guide).
+Nothing. The pipeline runs by itself on GitHub's servers, scheduled every 15 minutes (GitHub sometimes delays scheduled runs, so in practice it is every 15–30 minutes). Your Mac does not need to be on. With a free Apple ID, you re-install the app from Xcode once every 7 days (see the iPhone guide).
 
 ## For developers
 
