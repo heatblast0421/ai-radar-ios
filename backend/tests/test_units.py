@@ -145,3 +145,10 @@ def test_story_grouping(tmp_path, config):
     primary = conn.execute("SELECT id FROM items WHERE url='https://openai.com/b'").fetchone()[0]
     assert rows["https://tc.com/a"] == primary == rows["https://openai.com/b"]
     assert rows["https://x.com/c"] != primary
+
+
+def test_security_release_safeguard():
+    from airadar.rank import SECURITY_RE
+    assert SECURITY_RE.search("Medium — MCP request telemetry: GHSA-xv4x-g8mx-ch56. Provider-native config")
+    assert SECURITY_RE.search("Fixes CVE-2026-12345 in the parser")
+    assert not SECURITY_RE.search("Faster streaming and new docs")

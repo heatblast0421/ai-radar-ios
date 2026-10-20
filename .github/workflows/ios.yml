@@ -66,40 +66,49 @@ jobs:
 
       - name: Screenshots against the live backend
         if: always()
+        timeout-minutes: 15
         env:
           UDID: ${{ steps.sim.outputs.udid }}
         run: |
           mkdir -p ci/shots
+          exec > >(tee ci/shots.log) 2>&1
+          # run a command with a time limit (macOS has no `timeout`)
+          tl() { local secs=$1; shift; "$@" & local pid=$!; ( sleep "$secs"; kill -9 $pid 2>/dev/null ) & local w=$!; wait $pid; local rc=$?; kill $w 2>/dev/null; return $rc; }
           APP=$(find build/sim/Build/Products -name "AIRadar.app" -maxdepth 3 | head -1)
+          echo "app: $APP"
           if [ -z "$APP" ]; then echo "no app built"; exit 0; fi
-          xcrun simctl boot "$UDID" || true
-          xcrun simctl bootstatus "$UDID" -b
-          xcrun simctl ui "$UDID" appearance dark || true
-          xcrun simctl install "$UDID" "$APP"
+          xcrun simctl list devices | grep "$UDID" || true
+          tl 120 xcrun simctl boot "$UDID" || echo "boot rc=$?"
+          tl 240 xcrun simctl bootstatus "$UDID" || echo "bootstatus rc=$?"
+          tl 30 xcrun simctl ui "$UDID" appearance dark || echo "appearance rc=$?"
+          tl 120 xcrun simctl install "$UDID" "$APP" || echo "install rc=$?"
           BASE=https://heatblast0421.github.io/ai-radar-ios/api/v1
-          ITEM=$(curl -s $BASE/feed/pulse/top/1.json | python3 -c 'import json,sys; print(json.load(sys.stdin)["items"][0]["id"])' || echo "")
-          REPO=$(curl -s $BASE/github/emerging/1.json | python3 -c 'import json,sys; print(json.load(sys.stdin)["items"][0]["file_id"])' || echo "")
+          ITEM=$(curl -s -m 20 $BASE/feed/pulse/top/1.json | python3 -c 'import json,sys; print(json.load(sys.stdin)["items"][0]["id"])' || echo "")
+          REPO=$(curl -s -m 20 $BASE/github/emerging/1.json | python3 -c 'import json,sys; print(json.load(sys.stdin)["items"][0]["file_id"])' || echo "")
+          echo "item=$ITEM repo=$REPO"
           shot() {
-            xcrun simctl terminate "$UDID" com.heatblast0421.airadar 2>/dev/null || true
-            xcrun simctl launch "$UDID" com.heatblast0421.airadar "${@:2}"
-            sleep 14
-            xcrun simctl io "$UDID" screenshot "ci/shots/$1.png"
+            echo "== $1"
+            tl 20 xcrun simctl terminate "$UDID" com.heatblast0421.airadar 2>/dev/null || true
+            tl 60 xcrun simctl launch "$UDID" com.heatblast0421.airadar "${@:2}" || echo "launch rc=$?"
+            sleep 12
+            tl 30 xcrun simctl io "$UDID" screenshot "ci/shots/$1.png" || echo "screenshot rc=$?"
           }
           shot 1-pulse -AIRadarStartTab pulse
           shot 2-github -AIRadarStartTab github
           shot 3-research -AIRadarStartTab research
           shot 4-lab -AIRadarStartTab lab
           shot 5-industry -AIRadarStartTab industry
-          [ -n "$ITEM" ] && shot 6-item -AIRadarStartTab pulse -AIRadarStartScreen "item:$ITEM"
-          [ -n "$REPO" ] && shot 7-repo -AIRadarStartTab github -AIRadarStartScreen "repo:$REPO"
+          if [ -n "$ITEM" ]; then shot 6-item -AIRadarStartTab pulse -AIRadarStartScreen "item:$ITEM"; fi
+          if [ -n "$REPO" ]; then shot 7-repo -AIRadarStartTab github -AIRadarStartScreen "repo:$REPO"; fi
           shot 8-settings -AIRadarStartTab pulse -AIRadarStartScreen settings
           shot 9-search -AIRadarStartTab pulse -AIRadarStartScreen search
-          xcrun simctl ui "$UDID" appearance light || true
+          tl 30 xcrun simctl ui "$UDID" appearance light || true
           shot 10-pulse-light -AIRadarStartTab pulse
           ls -la ci/shots
 
       - name: Publish results to the 'ci-results' branch (readable without artifact downloads)
         if: always()
+        timeout-minutes: 5
         env:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |

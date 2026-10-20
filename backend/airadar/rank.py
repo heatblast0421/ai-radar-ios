@@ -25,7 +25,7 @@ LAUNCH_RE = re.compile(
     r"general availability|generally available|open[- ]sourc(e|es|ed|ing)|new model|unveil\w*|debut\w*)\b")
 SECURITY_RE = re.compile(
     r"(?i)\b(vulnerabilit(y|ies)|cve-\d{4}-\d+|security (advisory|flaw|issue|incident|update)|prompt injection|"
-    r"exploit(ed|s)?|data (leak|breach)|malicious|backdoor|supply[- ]chain attack)\b")
+    r"exploit(ed|s)?|data (leak|breach)|malicious|backdoor|supply[- ]chain attack|ghsa-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4})\b")
 BENCH_RE = re.compile(r"(?i)\b(benchmark|leaderboard|state[- ]of[- ]the[- ]art|sota|swe-bench|evaluation)\b")
 
 
@@ -62,6 +62,8 @@ def significance(item: sqlite3.Row, official: bool, metrics: dict, extra: dict) 
     kind = item["kind"]
     if kind == "release":
         rk = extra.get("release_kind")
+        if SECURITY_RE.search((item["content"] or "")[:3000]):
+            return 0.85, "Security fix in release"
         return {"major": 0.95, "minor": 0.35, "patch": 0.1}.get(rk, 0.25), ("Major framework release" if rk == "major" else None)
     if SECURITY_RE.search(title):
         return 0.85, "Security-related"
@@ -79,7 +81,7 @@ def significance(item: sqlite3.Row, official: bool, metrics: dict, extra: dict) 
 
 
 def assign_sections(kind: str, topics: list[str], hits: dict, group: str | None, official: bool,
-                    metrics: dict, extra: dict, ai_rel: float) -> list[str]:
+                    metrics: dict, extra: dict, ai_rel: float, significance_hint: str | None = None) -> list[str]:
     s = set()
     eng_strength = sum(hits.get(t, 0) for t in ENGINEERING_SECTION_TOPICS)
     if kind in ("paper", "model"):
@@ -107,7 +109,7 @@ def assign_sections(kind: str, topics: list[str], hits: dict, group: str | None,
     if kind == "model":
         pulse_ok = metrics.get("hf_likes", 0) >= 40
     if kind == "release":
-        pulse_ok = extra.get("release_kind") == "major"
+        pulse_ok = extra.get("release_kind") == "major" or significance_hint == "security"
     if pulse_ok:
         s.add("pulse")
     return sorted(s)
@@ -167,13 +169,14 @@ def score_items(conn: sqlite3.Connection, config: Config) -> int:
         elif score >= 62:
             importance, reason = "notable", "Above-average combined score"
         trending = 100 * (0.75 * eng + 0.25 * min(1.0, mention_counts.get(it["id"], 0) / 3)) * (0.5 ** ((age or 48) / 20))
-        sections = assign_sections(it["kind"], cls.topics, cls.topic_hits, group, official, metrics, extra, ai_rel)
+        sections = assign_sections(it["kind"], cls.topics, cls.topic_hits, group, official, metrics, extra, ai_rel,
+                                   "security" if safeguard in ("Security-related", "Security fix in release") else None)
         if ai_rel < 0.15:
             sections = [s for s in sections if s not in ("pulse", "lab", "industry")]
         if it["kind"] == "release" and (it["published_at"] or "") < newest_release.get(extra.get("repo", ""), ""):
             sections = []  # older releases stay on the repository page, not in feeds
-        if it["kind"] == "release" and extra.get("release_kind") == "patch":
-            sections = []
+        if it["kind"] == "release" and extra.get("release_kind") == "patch" and safeguard is None:
+            sections = []  # routine patch releases stay on the repo page; security fixes still surface
         breakdown = {k: round(v, 3) for k, v in parts.items()} | {
             "weights": WEIGHTS, "engagement_signals": eng_detail, "safeguard": safeguard,
             "ai_relevance": round(ai_rel, 3), "topic_hits": cls.topic_hits,
