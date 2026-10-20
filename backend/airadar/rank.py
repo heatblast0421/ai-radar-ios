@@ -235,7 +235,9 @@ def score_repos(conn: sqlite3.Connection, config: Config) -> int:
         snaps = conn.execute("SELECT * FROM repo_snapshots WHERE repo_id=? ORDER BY taken_at", (r["id"],)).fetchall()
         g = repo_growth(snaps, r["stars"], r["created_at"])
         cats = jload(r["categories"], [])
-        if not r["curated"] and r["ai_relevance"] < 0.1 and not cats:
+        weak = r["ai_relevance"] < 0.1 and not cats
+        hint_only = r["discovered_via"] not in ("search", "curated") and r["ai_relevance"] < 0.3
+        if not r["curated"] and (weak or hint_only):
             conn.execute("UPDATE repos SET tracked=0 WHERE id=?", (r["id"],))  # not AI; stop measuring
             continue
         rel = min(1.0, 0.5 + 0.5 * min(1.0, r["ai_relevance"] + 0.2 * len(cats)))

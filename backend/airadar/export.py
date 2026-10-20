@@ -268,7 +268,7 @@ class Exporter:
     def build_github(self) -> dict:
         rows = self.conn.execute(
             """SELECT * FROM repos WHERE tracked=1 AND archived=0 AND last_checked_at IS NOT NULL
-               AND (ai_relevance >= 0.1 OR categories != '[]' OR curated=1)""").fetchall()
+               AND (curated=1 OR (discovered_via IN ('search','curated') AND (ai_relevance >= 0.1 OR categories != '[]')) OR ai_relevance >= 0.3)""").fetchall()
         cards = [self.repo_card(r) for r in rows]
         recent = iso(now() - timedelta(days=90))
 
@@ -317,7 +317,7 @@ class Exporter:
                     "published_at": c["published_at"], "score": c["score"]} for c in cards]
         for r in self.conn.execute(
                 "SELECT id, full_name, description, categories, url, created_at, score, stars FROM repos WHERE tracked=1 "
-                "AND last_checked_at IS NOT NULL AND (ai_relevance >= 0.1 OR categories != '[]' OR curated=1)"):
+                "AND last_checked_at IS NOT NULL AND (curated=1 OR (discovered_via IN ('search','curated') AND (ai_relevance >= 0.1 OR categories != '[]')) OR ai_relevance >= 0.3)"):
             entries.append({"id": r["id"], "t": "repo", "kind": "repo", "title": r["full_name"],
                             "summary": (r["description"] or "")[:220], "topics": jload(r["categories"], []),
                             "sections": ["github"], "source": "GitHub", "url": r["url"], "published_at": r["created_at"],

@@ -59,7 +59,7 @@ TOPICS: tuple[Topic, ...] = (
         r"llms?", r"large language models?", r"language models?", r"foundation models?", r"open[- ]weights?",
         r"open[- ]source models?", r"reasoning models?", r"gpt-?\d[\w\.\-]*", r"o\d(-mini|-pro)?", r"claude",
         r"gemini", r"gemma", r"llama ?\d*", r"qwen\w*", r"mistral", r"mixtral", r"deepseek\w*", r"grok",
-        r"phi-?\d", r"kimi", r"glm-?\d*", r"model release", r"new model", r"api", r"sonnet", r"opus", r"haiku",
+        r"phi-?\d", r"kimi", r"glm-?\d*", r"model release", r"new model", r"llm apis?", r"responses api", r"sonnet", r"opus", r"haiku",
     ), research=True),
     Topic("multimodal", "Multimodal", "Vision, audio, speech, image and video generation", (
         r"multimodal", r"vision[- ]language", r"vlms?", r"image generation", r"video generation", r"text[- ]to[- ](image|video|speech)",

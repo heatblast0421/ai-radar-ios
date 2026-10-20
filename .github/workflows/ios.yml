@@ -1,0 +1,115 @@
+# Builds and tests the iPhone app on a real Mac (GitHub-hosted, free for public repos),
+# then captures simulator screenshots against the live backend for visual QA.
+name: iOS build & test
+
+on:
+  push:
+    paths: ["ios/**", ".github/workflows/ios.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write   # publishes screenshots + build summary to the 'ci-results' branch
+
+concurrency:
+  group: ios-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: macos-15
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select newest Xcode
+        run: |
+          XCODE=$(ls -d /Applications/Xcode*.app | sort -V | tail -1)
+          echo "Using $XCODE"
+          sudo xcode-select -s "$XCODE"
+          xcodebuild -version
+
+      - name: Pick an iPhone simulator
+        id: sim
+        run: |
+          UDID=$(xcrun simctl list devices available -j | python3 -c '
+          import json, re, sys
+          data = json.load(sys.stdin)["devices"]
+          best = None
+          for runtime, devs in data.items():
+              m = re.search(r"iOS-(\d+)-(\d+)", runtime)
+              if not m:
+                  continue
+              ver = (int(m.group(1)), int(m.group(2)))
+              for d in devs:
+                  if d["name"].startswith("iPhone") and "Pro Max" not in d["name"] and "SE" not in d["name"]:
+                      if best is None or ver > best[0]:
+                          best = (ver, d["udid"], d["name"])
+          print(best[1]); print(best, file=sys.stderr)')
+          echo "udid=$UDID" >> "$GITHUB_OUTPUT"
+
+      - name: Build for device (unsigned) to catch device-only issues
+        run: |
+          set -o pipefail
+          mkdir -p ci
+          xcodebuild build -project ios/AIRadar.xcodeproj -scheme AIRadar -configuration Release \
+            -destination 'generic/platform=iOS' CODE_SIGNING_ALLOWED=NO -derivedDataPath build/device \
+            2>&1 | tee ci/device-build.log | grep -E "error:|warning:|BUILD" || true
+          grep -q "BUILD SUCCEEDED" ci/device-build.log
+
+      - name: Run unit tests on simulator
+        run: |
+          set -o pipefail
+          xcodebuild test -project ios/AIRadar.xcodeproj -scheme AIRadar \
+            -destination "id=${{ steps.sim.outputs.udid }}" -derivedDataPath build/sim CODE_SIGNING_ALLOWED=NO \
+            2>&1 | tee ci/test.log | grep -E "error:|warning:|Test Case|Executed|TEST" || true
+          grep -q "TEST SUCCEEDED" ci/test.log
+
+      - name: Screenshots against the live backend
+        if: always()
+        env:
+          UDID: ${{ steps.sim.outputs.udid }}
+        run: |
+          mkdir -p ci/shots
+          APP=$(find build/sim/Build/Products -name "AIRadar.app" -maxdepth 3 | head -1)
+          if [ -z "$APP" ]; then echo "no app built"; exit 0; fi
+          xcrun simctl boot "$UDID" || true
+          xcrun simctl bootstatus "$UDID" -b
+          xcrun simctl ui "$UDID" appearance dark || true
+          xcrun simctl install "$UDID" "$APP"
+          BASE=https://heatblast0421.github.io/ai-radar-ios/api/v1
+          ITEM=$(curl -s $BASE/feed/pulse/top/1.json | python3 -c 'import json,sys; print(json.load(sys.stdin)["items"][0]["id"])' || echo "")
+          REPO=$(curl -s $BASE/github/emerging/1.json | python3 -c 'import json,sys; print(json.load(sys.stdin)["items"][0]["file_id"])' || echo "")
+          shot() {
+            xcrun simctl terminate "$UDID" com.heatblast0421.airadar 2>/dev/null || true
+            xcrun simctl launch "$UDID" com.heatblast0421.airadar "${@:2}"
+            sleep 14
+            xcrun simctl io "$UDID" screenshot "ci/shots/$1.png"
+          }
+          shot 1-pulse -AIRadarStartTab pulse
+          shot 2-github -AIRadarStartTab github
+          shot 3-research -AIRadarStartTab research
+          shot 4-lab -AIRadarStartTab lab
+          shot 5-industry -AIRadarStartTab industry
+          [ -n "$ITEM" ] && shot 6-item -AIRadarStartTab pulse -AIRadarStartScreen "item:$ITEM"
+          [ -n "$REPO" ] && shot 7-repo -AIRadarStartTab github -AIRadarStartScreen "repo:$REPO"
+          shot 8-settings -AIRadarStartTab pulse -AIRadarStartScreen settings
+          shot 9-search -AIRadarStartTab pulse -AIRadarStartScreen search
+          xcrun simctl ui "$UDID" appearance light || true
+          shot 10-pulse-light -AIRadarStartTab pulse
+          ls -la ci/shots
+
+      - name: Publish results to the 'ci-results' branch (readable without artifact downloads)
+        if: always()
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p /tmp/ci && cp -R ci/. /tmp/ci/ 2>/dev/null || true
+          cd /tmp/ci
+          for f in device-build.log test.log; do
+            [ -f "$f" ] && { grep -E "error:|warning:|failed|FAILED|SUCCEEDED|Executed" "$f" | head -400 > "${f%.log}-summary.txt"; tail -c 900000 "$f" > "$f.tail"; rm "$f"; }
+          done
+          echo "${{ github.sha }} ${{ job.status }}" > STATUS
+          git init -q -b ci-results
+          git config user.name "ai-radar-bot"; git config user.email "ai-radar-bot@users.noreply.github.com"
+          git add -A && git commit -q -m "CI results ${{ github.sha }}"
+          git push -q -f "https://x-access-token:${TOKEN}@github.com/${{ github.repository }}.git" ci-results
