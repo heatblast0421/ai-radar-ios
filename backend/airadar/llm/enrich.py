@@ -108,6 +108,12 @@ class Enricher:
         if calls >= self.max_calls_day or tokens >= self.max_tokens_day:
             self.stopped_reason = "daily budget reached"
             return False
+        if self.calls == 0:
+            last = self.conn.execute("SELECT ok, error, at FROM llm_usage ORDER BY id DESC LIMIT 1").fetchone()
+            if last and not last["ok"] and last["error"] and ("rate limited" in last["error"] or "unavailable" in last["error"]) \
+                    and last["at"] >= iso(now() - timedelta(minutes=45)):
+                self.stopped_reason = "cooling down after a recent rate limit"
+                return False
         return True
 
     def _call(self, purpose: str, system: str, user: str, max_tokens: int) -> dict | None:

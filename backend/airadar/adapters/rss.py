@@ -5,7 +5,7 @@ import re
 
 import feedparser
 
-from ..util import clean_text, iso, parse_time
+from ..util import ago, clean_text, iso, parse_time
 from .base import Adapter, AdapterResult, RawItem
 
 # Industry feeds carry deals, sponsored posts and gadget reviews; drop obvious low-value promo.
@@ -32,7 +32,7 @@ class RssAdapter(Adapter):
         return parse_feed(resp.content, self.source.discussion, self.source.group == "rss_industry")
 
 
-def parse_feed(content: bytes, discussion: bool = False, industry: bool = False) -> AdapterResult:
+def parse_feed(content: bytes, discussion: bool = False, industry: bool = False, max_age_days: int = 30) -> AdapterResult:
     parsed = feedparser.parse(content)
     if parsed.bozo and not parsed.entries:
         raise ValueError(f"unparseable feed: {parsed.bozo_exception}")
@@ -50,6 +50,8 @@ def parse_feed(content: bytes, discussion: bool = False, industry: bool = False)
             body = max((c.get("value", "") for c in e["content"]), key=len)
         body = body or e.get("summary") or e.get("description") or ""
         published = parse_time(e.get("published_parsed") or e.get("updated_parsed") or e.get("published"))
+        if published and published < ago(days=max_age_days):
+            continue  # first fetch of a big feed: skip the archive
         tags = [t.get("term", "") for t in e.get("tags", []) if t.get("term")]
         item = RawItem(
             kind="discussion" if discussion else "article",

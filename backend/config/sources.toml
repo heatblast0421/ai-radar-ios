@@ -34,13 +34,14 @@ sources = [
   { id = "huggingface-blog", name = "Hugging Face Blog", kind = "rss", group = "rss_official", credibility = 0.9, official = true, url = "https://huggingface.co/blog/feed.xml", ai_native = true },
   { id = "microsoft-research", name = "Microsoft Research", kind = "rss", group = "rss_official", credibility = 0.9, official = true, url = "https://www.microsoft.com/en-us/research/feed/" },
   { id = "nvidia-developer", name = "NVIDIA Technical Blog", kind = "rss", group = "rss_official", credibility = 0.85, official = true, url = "https://developer.nvidia.com/blog/feed" },
-  { id = "pytorch-blog", name = "PyTorch Blog", kind = "rss", group = "rss_official", credibility = 0.85, official = true, url = "https://pytorch.org/feed.xml" },
+  { enabled = false, id = "pytorch-blog", name = "PyTorch Blog", kind = "rss", group = "rss_official", credibility = 0.85, official = true, url = "https://pytorch.org/feed.xml" },
   { id = "github-blog-ai", name = "GitHub Blog (AI & ML)", kind = "rss", group = "rss_official", credibility = 0.85, official = true, url = "https://github.blog/ai-and-ml/feed/" },
   { id = "aws-ml", name = "AWS Machine Learning Blog", kind = "rss", group = "rss_official", credibility = 0.7, official = true, url = "https://aws.amazon.com/blogs/machine-learning/feed/" },
   { id = "cloudflare-ai", name = "Cloudflare Blog (AI)", kind = "rss", group = "rss_official", credibility = 0.8, official = true, url = "https://blog.cloudflare.com/tag/ai/rss/" },
   { id = "meta-engineering", name = "Engineering at Meta", kind = "rss", group = "rss_official", credibility = 0.85, official = true, url = "https://engineering.fb.com/feed/" },
+  # pytorch-blog: returns 403 to automated readers. langchain-blog: feed URL serves HTML; releases are tracked via GitHub instead.
   # ---------- Practitioner engineering writing ----------
-  { id = "langchain-blog", name = "LangChain Blog", kind = "rss", group = "rss_engineering", credibility = 0.8, official = true, url = "https://blog.langchain.com/rss/", ai_native = true },
+  { enabled = false, id = "langchain-blog", name = "LangChain Blog", kind = "rss", group = "rss_engineering", credibility = 0.8, official = true, url = "https://blog.langchain.com/rss/", ai_native = true },
   { id = "simonwillison", name = "Simon Willison", kind = "rss", group = "rss_engineering", credibility = 0.85, url = "https://simonwillison.net/atom/everything/", ai_native = true },
   { id = "latent-space", name = "Latent Space", kind = "rss", group = "rss_engineering", credibility = 0.8, url = "https://www.latent.space/feed", ai_native = true },
   { id = "interconnects", name = "Interconnects", kind = "rss", group = "rss_engineering", credibility = 0.8, url = "https://www.interconnects.ai/feed", ai_native = true },

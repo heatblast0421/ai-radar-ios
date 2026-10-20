@@ -143,7 +143,7 @@ class Exporter:
             sec_cards = [c for c in cards.values() if section in c["sections"]]
             counts[section] = len(sec_cards)
             orders = {
-                "top": sorted(sec_cards, key=lambda c: (-c["score"], c["title"])),
+                "top": diversify(sorted(sec_cards, key=lambda c: (-c["score"], c["title"]))),
                 "latest": sorted(sec_cards, key=lambda c: c["published_at"] or c["discovered_at"], reverse=True),
                 "trending": sorted([c for c in sec_cards if (c["trending_score"] or 0) > 0.5],
                                    key=lambda c: -(c["trending_score"] or 0)),
@@ -255,7 +255,7 @@ class Exporter:
             "score": r["score"], "emerging_score": r["emerging_score"], "curated": bool(r["curated"]),
             "growth": {
                 "trend_available": bool(growth.get("trend_available")),
-                "stars_24h": growth.get("stars_24h"), "stars_7d": growth.get("stars_7d"),
+                "stars_day": growth.get("stars_24h"), "stars_week": growth.get("stars_7d"),
                 "stars_per_day_measured": growth.get("stars_per_day_measured"),
                 "measured_window_hours": growth.get("measured_window_hours"),
                 "avg_stars_per_day_since_creation": growth.get("avg_stars_per_day_since_creation"),
@@ -279,7 +279,7 @@ class Exporter:
         orders = {
             "emerging": sorted([c for c in cards if (c["created_at"] or "") >= recent], key=lambda c: -c["emerging_score"]),
             "growing": sorted([c for c in cards if c["growth"]["trend_available"]],
-                              key=lambda c: -(c["growth"]["stars_7d"] if c["growth"]["stars_7d"] is not None
+                              key=lambda c: -(c["growth"]["stars_week"] if c["growth"]["stars_week"] is not None
                                               else (c["growth"]["stars_per_day_measured"] or 0) * 7)),
             "stars": sorted(cards, key=lambda c: -c["stars"]),
             "new": sorted([c for c in cards if (c["created_at"] or "") >= recent], key=lambda c: c["created_at"] or "", reverse=True),
@@ -366,7 +366,7 @@ class Exporter:
         last_err = self.conn.execute("SELECT error, at FROM llm_usage WHERE ok=0 ORDER BY at DESC LIMIT 1").fetchone()
         expl_count = self.conn.execute("SELECT COUNT(*) FROM explanations").fetchone()[0]
         llm = {"configured": bool(self.config.llm_api_key), "provider": usage["provider"], "model": usage["model"],
-               "calls_24h": usage["calls"] or 0, "successful_24h": usage["ok"] or 0, "last_call_at": usage["last"],
+               "calls_day": usage["calls"] or 0, "successful_day": usage["ok"] or 0, "last_call_at": usage["last"],
                "last_error": (last_err["error"] if last_err else None), "last_error_at": (last_err["at"] if last_err else None),
                "explanations_cached": expl_count}
         enabled = sum(1 for s in srcs if s["status"] != "disabled")
@@ -380,6 +380,21 @@ class Exporter:
                           "Trendshift and GitHub Trending are used only to discover repositories; their rankings are not republished."]}
         self.write("meta.json", meta)
         return meta
+
+
+def diversify(cards: list[dict], penalty: float = 2.5) -> list[dict]:
+    """Keep the ranked order but stop one kind (e.g. repos or papers) from filling the top of a feed:
+    each further item of the same kind is ranked as if its score were `penalty` points lower per predecessor."""
+    remaining = list(cards)
+    out: list[dict] = []
+    seen: dict[str, int] = {}
+    while remaining:
+        best_i = max(range(min(len(remaining), 40)),
+                     key=lambda i: remaining[i]["score"] - penalty * seen.get(remaining[i]["kind"], 0))
+        card = remaining.pop(best_i)
+        seen[card["kind"]] = seen.get(card["kind"], 0) + 1
+        out.append(card)
+    return out
 
 
 def latest_briefing_day(conn: sqlite3.Connection) -> str | None:

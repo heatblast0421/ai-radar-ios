@@ -45,9 +45,9 @@ def engagement(metrics: dict, mention_count: int, kind: str) -> tuple[float, dic
     signals = {
         "hn_points": _log_norm(metrics.get("hn_points", 0), 800),
         "hn_comments": 0.6 * _log_norm(metrics.get("hn_comments", 0), 500),
-        "hf_upvotes": _log_norm(metrics.get("hf_upvotes", 0), 150),
+        "hf_upvotes": 0.85 * _log_norm(metrics.get("hf_upvotes", 0), 300),
         "hf_likes": 0.8 * _log_norm(metrics.get("hf_likes", 0), 1500),
-        "repo_momentum": metrics.get("repo_momentum", 0.0),
+        "repo_momentum": 0.75 * metrics.get("repo_momentum", 0.0),
     }
     if kind == "release":
         signals["repo_popularity"] = 0.6 * _log_norm(metrics.get("stars", 0), 100000)
@@ -62,13 +62,13 @@ def significance(item: sqlite3.Row, official: bool, metrics: dict, extra: dict) 
     kind = item["kind"]
     if kind == "release":
         rk = extra.get("release_kind")
-        return {"major": 0.95, "minor": 0.6, "patch": 0.12}.get(rk, 0.3), ("Major framework release" if rk == "major" else None)
+        return {"major": 0.95, "minor": 0.35, "patch": 0.1}.get(rk, 0.25), ("Major framework release" if rk == "major" else None)
     if SECURITY_RE.search(title):
         return 0.85, "Security-related"
     if official and LAUNCH_RE.search(title):
         return 0.8, "Official announcement"
-    if kind == "paper" and metrics.get("hf_upvotes", 0) >= 30:
-        return 0.6, None
+    if kind == "paper" and metrics.get("hf_upvotes", 0) >= 60:
+        return 0.55, None
     if kind == "model" and metrics.get("hf_likes", 0) >= 200:
         return 0.6, None
     if official:
@@ -84,23 +84,30 @@ def assign_sections(kind: str, topics: list[str], hits: dict, group: str | None,
     eng_strength = sum(hits.get(t, 0) for t in ENGINEERING_SECTION_TOPICS)
     if kind in ("paper", "model"):
         s.add("research")
+    elif kind in ("release", "repo"):
+        pass  # code and changelogs belong to the Engineering Lab / GitHub Radar
     elif "research" in topics or ("models" in topics and (official or hits.get("models", 0) >= 4)) or (
             "evals" in topics and hits.get("evals", 0) >= 3):
         s.add("research")
     if kind in ("release", "repo"):
         s.add("lab")
+    elif kind in ("paper", "model"):
+        pass  # Lab favours practical engineering; papers live in Models & Research
     elif eng_strength >= 3 and (group != "rss_industry" or eng_strength >= 6):
         s.add("lab")
     if kind not in ("paper", "model", "release") and (group == "rss_industry" or "industry" in topics):
         s.add("industry")
     # Pulse: everything noteworthy, but not the long tail of papers/patches/minor models.
     pulse_ok = ai_rel >= 0.2 or kind in ("release", "repo")
+    if kind == "repo":
+        pulse_ok = metrics.get("repo_momentum", 0) >= 0.55
     if kind == "paper":
-        pulse_ok = metrics.get("hf_upvotes", 0) >= 5 or metrics.get("hn_points", 0) >= 20
+        eng_paper = sum(hits.get(t, 0) for t in ENGINEERING_SECTION_TOPICS) >= 3
+        pulse_ok = (metrics.get("hf_upvotes", 0) >= 15 and eng_paper) or metrics.get("hn_points", 0) >= 40
     if kind == "model":
         pulse_ok = metrics.get("hf_likes", 0) >= 40
     if kind == "release":
-        pulse_ok = extra.get("release_kind") in ("major", "minor")
+        pulse_ok = extra.get("release_kind") == "major"
     if pulse_ok:
         s.add("pulse")
     return sorted(s)
@@ -115,6 +122,12 @@ def score_items(conn: sqlite3.Connection, config: Config) -> int:
     for r in conn.execute("SELECT item_id, source_id FROM item_mentions"):
         mention_sources[r[0]].add(r[1])
     rows = conn.execute("SELECT * FROM items WHERE COALESCE(published_at, discovered_at) >= ?", (cutoff,)).fetchall()
+    newest_release: dict[str, str] = {}
+    for it in rows:
+        if it["kind"] == "release":
+            repo = jload(it["extra"], {}).get("repo", "")
+            if (it["published_at"] or "") > newest_release.get(repo, ""):
+                newest_release[repo] = it["published_at"] or ""
     n = 0
     for it in rows:
         sc = src.get(it["source_id"])
@@ -149,14 +162,18 @@ def score_items(conn: sqlite3.Connection, config: Config) -> int:
             # Safeguard: important official launches / security news surface even without community buzz.
             score = max(score, 64.0)
             importance, reason = "high", safeguard
-        elif score >= 70:
+        elif score >= 76 and it["kind"] not in ("release", "repo"):
             importance, reason = "high", "High combined score"
-        elif score >= 56:
+        elif score >= 62:
             importance, reason = "notable", "Above-average combined score"
         trending = 100 * (0.75 * eng + 0.25 * min(1.0, mention_counts.get(it["id"], 0) / 3)) * (0.5 ** ((age or 48) / 20))
         sections = assign_sections(it["kind"], cls.topics, cls.topic_hits, group, official, metrics, extra, ai_rel)
         if ai_rel < 0.15:
             sections = [s for s in sections if s not in ("pulse", "lab", "industry")]
+        if it["kind"] == "release" and (it["published_at"] or "") < newest_release.get(extra.get("repo", ""), ""):
+            sections = []  # older releases stay on the repository page, not in feeds
+        if it["kind"] == "release" and extra.get("release_kind") == "patch":
+            sections = []
         breakdown = {k: round(v, 3) for k, v in parts.items()} | {
             "weights": WEIGHTS, "engagement_signals": eng_detail, "safeguard": safeguard,
             "ai_relevance": round(ai_rel, 3), "topic_hits": cls.topic_hits,

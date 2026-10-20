@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 import logging
+import os
 import time
 from datetime import timedelta
 from pathlib import Path
@@ -14,7 +15,7 @@ from .db import jdump, jload
 from .export import Exporter
 from .http import Http
 from .llm.enrich import Enricher
-from .llm.provider import LLM
+from .llm.provider import DEFAULT_BUDGETS, LLM
 from .rank import group_stories, score_items, score_repos, sync_repo_items
 from .store import Store
 from .util import first_sentences, iso, now
@@ -129,9 +130,10 @@ def run(config: Config, force: set[str] | None = None, skip_fetch: bool = False,
             except Exception as exc:
                 summary["llm_error"] = str(exc)
         if llm is not None:
-            enricher = Enricher(conn, llm, config.llm_max_calls_per_run, config.llm_max_calls_per_day,
-                                max_tokens_day=int(__import__("os").environ.get("LLM_MAX_TOKENS_PER_DAY", 180000)),
-                                sleep=http.sleep)
+            per_run, per_day, tokens_day = DEFAULT_BUDGETS.get(llm.provider, (8, 150, 300_000))
+            env_tokens = os.environ.get("LLM_MAX_TOKENS_PER_DAY")
+            enricher = Enricher(conn, llm, config.llm_max_calls_per_run or per_run, config.llm_max_calls_per_day or per_day,
+                                max_tokens_day=int(env_tokens) if env_tokens else tokens_day, sleep=http.sleep)
             summary["llm"] = enricher.run()
             summary["llm"]["provider"] = llm.provider
             summary["llm"]["model"] = llm._model

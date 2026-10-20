@@ -36,8 +36,8 @@ class Config:
     llm_provider: str | None = None
     llm_model: str | None = None
     llm_base_url: str | None = None
-    llm_max_calls_per_run: int = 14
-    llm_max_calls_per_day: int = 400
+    llm_max_calls_per_run: int | None = None   # None = provider default (see llm.provider.DEFAULT_BUDGETS)
+    llm_max_calls_per_day: int | None = None
     db_path: str = "data/radar.db"
     site_dir: str = "site"
     public_base_url: str = ""
@@ -65,7 +65,8 @@ def load(path: str | Path | None = None, env: dict | None = None) -> Config:
 
     def _int(name, default):
         try:
-            return int(env.get(name, default))
+            value = env.get(name)
+            return int(value) if value not in (None, "") else default
         except (TypeError, ValueError):
             return default
 
@@ -80,8 +81,8 @@ def load(path: str | Path | None = None, env: dict | None = None) -> Config:
         llm_provider=env.get("LLM_PROVIDER") or None,
         llm_model=env.get("LLM_MODEL") or None,
         llm_base_url=env.get("LLM_BASE_URL") or None,
-        llm_max_calls_per_run=_int("LLM_MAX_CALLS_PER_RUN", 14),
-        llm_max_calls_per_day=_int("LLM_MAX_CALLS_PER_DAY", 400),
+        llm_max_calls_per_run=_int("LLM_MAX_CALLS_PER_RUN", None),
+        llm_max_calls_per_day=_int("LLM_MAX_CALLS_PER_DAY", None),
         db_path=env.get("AIRADAR_DB", "data/radar.db"),
         site_dir=env.get("AIRADAR_SITE_DIR", "site"),
         public_base_url=env.get("AIRADAR_PUBLIC_BASE_URL", ""),

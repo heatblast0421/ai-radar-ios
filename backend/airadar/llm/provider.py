@@ -32,6 +32,15 @@ PROVIDERS = {
     "anthropic": {"base": "https://api.anthropic.com/v1", "prefs": [
         "claude-haiku-5-5", "claude-haiku-4-5", "claude-3-5-haiku-latest"]},
 }
+# Conservative defaults per provider: (calls per run, calls per day, tokens per day).
+# Free tiers are small and change without notice; override with LLM_MAX_CALLS_PER_RUN / _PER_DAY / LLM_MAX_TOKENS_PER_DAY.
+DEFAULT_BUDGETS = {
+    "gemini": (6, 90, 400_000),
+    "groq": (12, 300, 180_000),
+    "xai": (10, 200, 600_000),
+    "openai": (10, 200, 600_000),
+    "anthropic": (10, 200, 600_000),
+}
 _EXCLUDE = re.compile(r"(?i)whisper|guard|tts|embed|audio|image|vision-only|playai|compound|safeguard|moderation|transcribe|live|imagen|veo")
 
 

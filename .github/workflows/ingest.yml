@@ -58,9 +58,9 @@ jobs:
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           LLM_MODEL: ${{ vars.LLM_MODEL }}
-          LLM_MAX_CALLS_PER_RUN: ${{ vars.LLM_MAX_CALLS_PER_RUN || '14' }}
-          LLM_MAX_CALLS_PER_DAY: ${{ vars.LLM_MAX_CALLS_PER_DAY || '400' }}
-          LLM_MAX_TOKENS_PER_DAY: ${{ vars.LLM_MAX_TOKENS_PER_DAY || '180000' }}
+          LLM_MAX_CALLS_PER_RUN: ${{ vars.LLM_MAX_CALLS_PER_RUN }}
+          LLM_MAX_CALLS_PER_DAY: ${{ vars.LLM_MAX_CALLS_PER_DAY }}
+          LLM_MAX_TOKENS_PER_DAY: ${{ vars.LLM_MAX_TOKENS_PER_DAY }}
           AIRADAR_DISABLED_SOURCES: ${{ vars.AIRADAR_DISABLED_SOURCES }}
         run: python -m airadar.cli run --force "${{ inputs.force }}"
 
