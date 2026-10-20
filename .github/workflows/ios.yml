@@ -57,6 +57,7 @@ jobs:
           grep -q "BUILD SUCCEEDED" ci/device-build.log
 
       - name: Run unit tests on simulator
+        timeout-minutes: 20
         run: |
           set -o pipefail
           xcodebuild test -project ios/AIRadar.xcodeproj -scheme AIRadar \
@@ -73,7 +74,7 @@ jobs:
           mkdir -p ci/shots
           exec > >(tee ci/shots.log) 2>&1
           # run a command with a time limit (macOS has no `timeout`)
-          tl() { local secs=$1; shift; "$@" & local pid=$!; ( sleep "$secs"; kill -9 $pid 2>/dev/null ) & local w=$!; wait $pid; local rc=$?; kill $w 2>/dev/null; return $rc; }
+          tl() { local secs=$1; shift; "$@" & local pid=$!; ( sleep "$secs"; kill -9 $pid 2>/dev/null ) >/dev/null 2>&1 & local w=$!; wait $pid; local rc=$?; kill $w 2>/dev/null; return $rc; }
           APP=$(find build/sim/Build/Products -name "AIRadar.app" -maxdepth 3 | head -1)
           echo "app: $APP"
           if [ -z "$APP" ]; then echo "no app built"; exit 0; fi

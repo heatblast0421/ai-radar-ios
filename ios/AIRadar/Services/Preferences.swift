@@ -17,7 +17,7 @@ final class Preferences: ObservableObject {
     }
 
     /// Topics followed by default (practical AI engineering focus).
-    static let defaultTopics: Set<String> = ["agents", "mcp", "rag", "memory", "evals", "inference", "infra", "models", "devtools"]
+    nonisolated static let defaultTopics: Set<String> = ["agents", "mcp", "rag", "memory", "evals", "inference", "infra", "models", "devtools"]
 
     private let defaults: UserDefaults
 

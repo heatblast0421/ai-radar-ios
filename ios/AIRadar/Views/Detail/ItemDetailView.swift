@@ -122,7 +122,7 @@ struct ItemDetailView: View {
 
     private func actions(_ card: FeedCard) -> some View {
         HStack(spacing: 10) {
-            ExternalLinkButton(title: "Open source", url: card.url, icon: "safari")
+            ExternalLinkButton(title: "Read original", url: card.url, icon: "safari")
             if let d = card.discussionUrl, d != card.url {
                 ExternalLinkButton(title: "Discussion", url: d, icon: "bubble.left.and.bubble.right")
             }
