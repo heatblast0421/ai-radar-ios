@@ -1,0 +1,93 @@
+# AI Radar source configuration.
+# Add, remove or disable sources here; no code changes needed.
+# credibility: 0..1, used transparently in ranking. official = first-party announcement from the organisation itself.
+
+[schedule]  # minimum minutes between runs of each job group (the GitHub workflow wakes every 15 minutes)
+hackernews        = 15
+rss_official      = 30
+rss_engineering   = 60
+rss_industry      = 60
+github_discovery  = 120
+github_snapshots  = 360
+github_releases   = 60
+trending_pages    = 180
+arxiv             = 360
+hf_papers         = 120
+hf_models         = 180
+briefing          = 1440   # daily briefing (generated once per UTC day, after 00:30 UTC = 06:00 IST)
+
+[limits]
+max_item_age_days      = 45     # items older than this are pruned from the feed
+feed_page_size         = 30
+feed_max_items         = 360    # per section
+max_tracked_repos      = 450
+hn_min_points          = 12
+arxiv_max_results      = 150
+
+[catalog]
+sources = [
+  # ---------- Official AI company & lab announcements ----------
+  { id = "openai-news", name = "OpenAI", kind = "rss", group = "rss_official", credibility = 1.0, official = true, url = "https://openai.com/news/rss.xml", ai_native = true },
+  { id = "google-deepmind", name = "Google DeepMind", kind = "rss", group = "rss_official", credibility = 1.0, official = true, url = "https://deepmind.google/blog/rss.xml", ai_native = true },
+  { id = "google-ai", name = "Google AI Blog", kind = "rss", group = "rss_official", credibility = 0.95, official = true, url = "https://blog.google/technology/ai/rss/", ai_native = true },
+  { id = "google-research", name = "Google Research", kind = "rss", group = "rss_official", credibility = 0.95, official = true, url = "https://research.google/blog/rss/" },
+  { id = "huggingface-blog", name = "Hugging Face Blog", kind = "rss", group = "rss_official", credibility = 0.9, official = true, url = "https://huggingface.co/blog/feed.xml", ai_native = true },
+  { id = "microsoft-research", name = "Microsoft Research", kind = "rss", group = "rss_official", credibility = 0.9, official = true, url = "https://www.microsoft.com/en-us/research/feed/" },
+  { id = "nvidia-developer", name = "NVIDIA Technical Blog", kind = "rss", group = "rss_official", credibility = 0.85, official = true, url = "https://developer.nvidia.com/blog/feed" },
+  { id = "pytorch-blog", name = "PyTorch Blog", kind = "rss", group = "rss_official", credibility = 0.85, official = true, url = "https://pytorch.org/feed.xml" },
+  { id = "github-blog-ai", name = "GitHub Blog (AI & ML)", kind = "rss", group = "rss_official", credibility = 0.85, official = true, url = "https://github.blog/ai-and-ml/feed/" },
+  { id = "aws-ml", name = "AWS Machine Learning Blog", kind = "rss", group = "rss_official", credibility = 0.7, official = true, url = "https://aws.amazon.com/blogs/machine-learning/feed/" },
+  { id = "cloudflare-ai", name = "Cloudflare Blog (AI)", kind = "rss", group = "rss_official", credibility = 0.8, official = true, url = "https://blog.cloudflare.com/tag/ai/rss/" },
+  { id = "meta-engineering", name = "Engineering at Meta", kind = "rss", group = "rss_official", credibility = 0.85, official = true, url = "https://engineering.fb.com/feed/" },
+  # ---------- Practitioner engineering writing ----------
+  { id = "langchain-blog", name = "LangChain Blog", kind = "rss", group = "rss_engineering", credibility = 0.8, official = true, url = "https://blog.langchain.com/rss/", ai_native = true },
+  { id = "simonwillison", name = "Simon Willison", kind = "rss", group = "rss_engineering", credibility = 0.85, url = "https://simonwillison.net/atom/everything/", ai_native = true },
+  { id = "latent-space", name = "Latent Space", kind = "rss", group = "rss_engineering", credibility = 0.8, url = "https://www.latent.space/feed", ai_native = true },
+  { id = "interconnects", name = "Interconnects", kind = "rss", group = "rss_engineering", credibility = 0.8, url = "https://www.interconnects.ai/feed", ai_native = true },
+  { id = "raschka", name = "Sebastian Raschka", kind = "rss", group = "rss_engineering", credibility = 0.8, url = "https://magazine.sebastianraschka.com/feed", ai_native = true },
+  { id = "lilianweng", name = "Lil'Log (Lilian Weng)", kind = "rss", group = "rss_engineering", credibility = 0.85, url = "https://lilianweng.github.io/index.xml", ai_native = true },
+  { id = "chiphuyen", name = "Chip Huyen", kind = "rss", group = "rss_engineering", credibility = 0.8, url = "https://huyenchip.com/feed.xml" },
+  { id = "eugeneyan", name = "Eugene Yan", kind = "rss", group = "rss_engineering", credibility = 0.8, url = "https://eugeneyan.com/rss/" },
+  { id = "lobsters-ai", name = "Lobsters (AI tag)", kind = "rss", group = "rss_engineering", credibility = 0.55, discussion = true, url = "https://lobste.rs/t/ai.rss", ai_native = true },
+  # ---------- Industry & startups (filtered for AI relevance; promo terms are dropped) ----------
+  { id = "techcrunch-ai", name = "TechCrunch AI", kind = "rss", group = "rss_industry", credibility = 0.65, url = "https://techcrunch.com/category/artificial-intelligence/feed/", ai_native = true },
+  { id = "venturebeat-ai", name = "VentureBeat AI", kind = "rss", group = "rss_industry", credibility = 0.6, url = "https://venturebeat.com/category/ai/feed/", ai_native = true },
+  { id = "theverge-ai", name = "The Verge AI", kind = "rss", group = "rss_industry", credibility = 0.6, url = "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml", ai_native = true },
+  { id = "arstechnica-ai", name = "Ars Technica AI", kind = "rss", group = "rss_industry", credibility = 0.65, url = "https://arstechnica.com/ai/feed/", ai_native = true },
+  { id = "mit-tech-review-ai", name = "MIT Technology Review AI", kind = "rss", group = "rss_industry", credibility = 0.7, url = "https://www.technologyreview.com/topic/artificial-intelligence/feed", ai_native = true },
+  # ---------- APIs ----------
+  { id = "hackernews", name = "Hacker News", kind = "hackernews", group = "hackernews", credibility = 0.6, discussion = true, url = "https://hn.algolia.com/api/v1/search_by_date" },
+  { id = "arxiv", name = "arXiv", kind = "arxiv", group = "arxiv", credibility = 0.7, url = "https://export.arxiv.org/api/query", categories = ["cs.AI", "cs.CL", "cs.LG", "cs.MA", "cs.IR", "cs.SE"] },
+  { id = "hf-papers", name = "Hugging Face Daily Papers", kind = "hf_papers", group = "hf_papers", credibility = 0.75, url = "https://huggingface.co/api/daily_papers" },
+  { id = "hf-models", name = "Hugging Face Trending Models", kind = "hf_models", group = "hf_models", credibility = 0.75, url = "https://huggingface.co/api/models" },
+  { id = "github-discovery", name = "GitHub Search", kind = "github_discovery", group = "github_discovery", credibility = 0.65, url = "https://api.github.com/search/repositories" },
+  { id = "github-snapshots", name = "GitHub Repo Metrics", kind = "github_snapshots", group = "github_snapshots", credibility = 0.6, url = "https://api.github.com/graphql" },
+  { id = "trendshift", name = "Trendshift", kind = "trending_page", group = "trending_pages", credibility = 0.6, url = "https://trendshift.io/", extra_urls = ["https://trendshift.io/github-trending-repositories"] },
+  { id = "github-trending", name = "GitHub Trending", kind = "trending_page", group = "trending_pages", credibility = 0.6, url = "https://github.com/trending?since=daily", parse = "github", extra_urls = ["https://github.com/trending/python?since=daily", "https://github.com/trending/typescript?since=daily"] },
+  { id = "github-releases", name = "Framework Releases (GitHub)", kind = "github_releases", group = "github_releases", credibility = 0.9, official = true, url = "https://api.github.com/graphql" },
+]
+
+[github]
+# Topic searches for emerging repositories (created recently, sorted by stars).
+discovery_topics = [
+  "ai-agents", "agents", "agentic-ai", "llm", "large-language-models", "mcp", "mcp-server",
+  "model-context-protocol", "rag", "retrieval-augmented-generation", "llm-inference", "inference",
+  "llmops", "llm-evaluation", "evals", "multi-agent", "agent-framework", "vector-database",
+  "generative-ai", "claude-code", "coding-agent", "ai-memory", "fine-tuning", "local-llm",
+]
+discovery_keywords = ["agent harness", "agent memory", "mcp server", "context engineering", "llm inference engine"]
+created_within_days = 60
+min_stars_new = 40
+
+# Important frameworks whose releases and metrics are always tracked (missing/renamed repos are skipped and reported).
+curated_repos = [
+  "anthropics/claude-code", "anthropics/anthropic-sdk-python", "openai/codex", "openai/openai-agents-python",
+  "openai/openai-python", "modelcontextprotocol/specification", "modelcontextprotocol/python-sdk",
+  "modelcontextprotocol/typescript-sdk", "modelcontextprotocol/servers", "google-gemini/gemini-cli", "google/adk-python",
+  "langchain-ai/langchain", "langchain-ai/langgraph", "run-llama/llama_index", "crewAIInc/crewAI", "microsoft/autogen",
+  "pydantic/pydantic-ai", "huggingface/smolagents", "agno-agi/agno", "stanfordnlp/dspy", "BerriAI/litellm",
+  "vllm-project/vllm", "sgl-project/sglang", "ollama/ollama", "ggml-org/llama.cpp", "huggingface/transformers",
+  "NVIDIA/TensorRT-LLM", "unslothai/unsloth", "mem0ai/mem0", "letta-ai/letta", "langfuse/langfuse",
+  "Arize-ai/phoenix", "deepset-ai/haystack", "browser-use/browser-use", "All-Hands-AI/OpenHands",
+  "microsoft/semantic-kernel", "qdrant/qdrant", "chroma-core/chroma", "mlc-ai/mlc-llm", "pytorch/pytorch",
+]

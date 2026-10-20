@@ -1,0 +1,17 @@
+# secrets
+.env
+*.secret
+.secrets/
+AI-Radar-private/
+# python
+__pycache__/
+*.pyc
+.pytest_cache/
+backend/data/
+backend/site/
+# xcode
+ios/build/
+DerivedData/
+xcuserdata/
+*.xcuserstate
+.DS_Store

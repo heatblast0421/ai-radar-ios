@@ -1,0 +1,28 @@
+name: Backend tests
+
+on:
+  push:
+    paths: ["backend/**", ".github/workflows/tests.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r backend/requirements-dev.txt
+      - working-directory: backend
+        run: python -m pytest -q
+      - name: Secret scan (fail if anything looks like a real key)
+        run: |
+          if git grep -nE '(gsk_[A-Za-z0-9]{20,}|xai-[A-Za-z0-9]{20,}|AIza[0-9A-Za-z_-]{30,}|sk-ant-[A-Za-z0-9-]{20,}|github_pat_[A-Za-z0-9_]{20,}|ghp_[A-Za-z0-9]{30,})' -- . ':!backend/tests'; then
+            echo "Possible secret committed!"; exit 1
+          fi
+          echo "No secrets found."
