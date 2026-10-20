@@ -245,6 +245,8 @@ struct ExternalLinkButton: View {
             Link(destination: link) {
                 Label(title, systemImage: icon)
                     .font(.subheadline.weight(.semibold))
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.8)
                     .frame(maxWidth: .infinity, minHeight: 44)
             }
             .buttonStyle(.bordered)

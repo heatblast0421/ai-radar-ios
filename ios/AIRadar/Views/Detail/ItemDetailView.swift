@@ -121,25 +121,29 @@ struct ItemDetailView: View {
     }
 
     private func actions(_ card: FeedCard) -> some View {
-        HStack(spacing: 10) {
+        VStack(spacing: 10) {
             ExternalLinkButton(title: "Read original", url: card.url, icon: "safari")
-            if let d = card.discussionUrl, d != card.url {
-                ExternalLinkButton(title: "Discussion", url: d, icon: "bubble.left.and.bubble.right")
-            }
-            Button {
-                bookmarks.toggle(SavedEntry(card: card))
-            } label: {
-                Image(systemName: bookmarks.isSaved(card.id) ? "bookmark.fill" : "bookmark")
-                    .frame(width: 44, height: 44)
-            }
-            .buttonStyle(.bordered)
-            .accessibilityLabel(bookmarks.isSaved(card.id) ? "Remove bookmark" : "Bookmark")
-            if let url = URL(string: card.url) {
-                ShareLink(item: url) {
-                    Image(systemName: "square.and.arrow.up").frame(width: 44, height: 44)
+            HStack(spacing: 10) {
+                if let d = card.discussionUrl, d != card.url {
+                    ExternalLinkButton(title: "Discussion", url: d, icon: "bubble.left.and.bubble.right")
+                } else {
+                    Spacer(minLength: 0)
+                }
+                Button {
+                    bookmarks.toggle(SavedEntry(card: card))
+                } label: {
+                    Image(systemName: bookmarks.isSaved(card.id) ? "bookmark.fill" : "bookmark")
+                        .frame(width: 44, height: 44)
                 }
                 .buttonStyle(.bordered)
-                .accessibilityLabel("Share")
+                .accessibilityLabel(bookmarks.isSaved(card.id) ? "Remove bookmark" : "Bookmark")
+                if let url = URL(string: card.url) {
+                    ShareLink(item: url) {
+                        Image(systemName: "square.and.arrow.up").frame(width: 44, height: 44)
+                    }
+                    .buttonStyle(.bordered)
+                    .accessibilityLabel("Share")
+                }
             }
         }
     }
