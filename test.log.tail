@@ -1,0 +1,775 @@
+Command line invocation:
+    /Applications/Xcode_26.3.app/Contents/Developer/usr/bin/xcodebuild test -project ios/AIRadar.xcodeproj -scheme AIRadar -destination id=E952A9B0-CC78-435C-BF08-06AD47FE1076 -derivedDataPath build/sim CODE_SIGNING_ALLOWED=NO
+
+Build settings from command line:
+    CODE_SIGNING_ALLOWED = NO
+
+--- xcodebuild: WARNING: Using the first of multiple matching destinations:
+{ platform:iOS Simulator, arch:arm64, id:E952A9B0-CC78-435C-BF08-06AD47FE1076, OS:26.2, name:iPhone 17 Pro }
+{ platform:iOS Simulator, arch:x86_64, id:E952A9B0-CC78-435C-BF08-06AD47FE1076, OS:26.2, name:iPhone 17 Pro }
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (2 targets)
+    Target 'AIRadarTests' in project 'AIRadar'
+        ➜ Explicit dependency on target 'AIRadar' in project 'AIRadar'
+    Target 'AIRadar' in project 'AIRadar' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode_26.3.app/Contents/Developer/usr/bin/actool --print-asset-tag-combinations --output-format xml1 /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/Assets.xcassets
+
+ExecuteExternalTool /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode_26.3.app/Contents/Developer/usr/bin/actool --version --output-format xml1
+
+ExecuteExternalTool /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+Build description signature: c16fb141264c625bea9bd2c5419eb71d
+Build description path: /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/XCBuildData/c16fb141264c625bea9bd2c5419eb71d.xcbuilddata
+CreateBuildDirectory /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar.xcodeproj
+    builtin-create-build-directory /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products
+
+ClangStatCache /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/SDKStatCaches.noindex/iphonesimulator26.2-23C57-dc75598d0054f22ec865fa860f139d72e244bd9a5feaf902f95f61bf06266e52.sdkstatcache
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar.xcodeproj
+    /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -o /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/SDKStatCaches.noindex/iphonesimulator26.2-23C57-dc75598d0054f22ec865fa860f139d72e244bd9a5feaf902f95f61bf06266e52.sdkstatcache
+
+CreateBuildDirectory /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar.xcodeproj
+    builtin-create-build-directory /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex
+
+CreateBuildDirectory /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar.xcodeproj
+    builtin-create-build-directory /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator
+
+WriteAuxiliaryFile /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar-7d8e99a3bde1240db4acd610d1b6df49-VFS-iphonesimulator/all-product-headers.yaml
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar.xcodeproj
+    write-file /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar-7d8e99a3bde1240db4acd610d1b6df49-VFS-iphonesimulator/all-product-headers.yaml
+
+CreateBuildDirectory /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar.xcodeproj
+    builtin-create-build-directory /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+
+CreateBuildDirectory /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/ExplicitPrecompiledModules
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar.xcodeproj
+    builtin-create-build-directory /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/ExplicitPrecompiledModules
+
+CreateBuildDirectory /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar.xcodeproj
+    builtin-create-build-directory /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator
+
+WriteAuxiliaryFile /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/empty-AIRadarTests.plist (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    write-file /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/empty-AIRadarTests.plist
+
+WriteAuxiliaryFile /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/AIRadarTests_const_extract_protocols.json (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    write-file /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/AIRadarTests_const_extract_protocols.json
+
+WriteAuxiliaryFile /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/AIRadarTests.SwiftFileList (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    write-file /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/AIRadarTests.SwiftFileList
+
+WriteAuxiliaryFile /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/AIRadarTests.SwiftConstValuesFileList (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    write-file /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/AIRadarTests.SwiftConstValuesFileList
+
+WriteAuxiliaryFile /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/AIRadarTests.LinkFileList (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    write-file /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/AIRadarTests.LinkFileList
+
+WriteAuxiliaryFile /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/AIRadarTests-OutputFileMap.json (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    write-file /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/AIRadarTests-OutputFileMap.json
+
+WriteAuxiliaryFile /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/AIRadarTests.hmap (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    write-file /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/AIRadarTests.hmap
+
+WriteAuxiliaryFile /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/AIRadarTests.DependencyStaticMetadataFileList (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    write-file /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/AIRadarTests.DependencyStaticMetadataFileList
+
+WriteAuxiliaryFile /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/AIRadarTests.DependencyMetadataFileList (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    write-file /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/AIRadarTests.DependencyMetadataFileList
+
+WriteAuxiliaryFile /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/AIRadarTests-project-headers.hmap (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    write-file /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/AIRadarTests-project-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/AIRadarTests-own-target-headers.hmap (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    write-file /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/AIRadarTests-own-target-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/AIRadarTests-generated-files.hmap (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    write-file /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/AIRadarTests-generated-files.hmap
+
+WriteAuxiliaryFile /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/AIRadarTests-all-target-headers.hmap (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    write-file /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/AIRadarTests-all-target-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/AIRadarTests-all-non-framework-target-headers.hmap (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    write-file /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/AIRadarTests-all-non-framework-target-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar_const_extract_protocols.json (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    write-file /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar_const_extract_protocols.json
+
+WriteAuxiliaryFile /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar.SwiftFileList (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    write-file /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar.SwiftFileList
+
+WriteAuxiliaryFile /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar.SwiftConstValuesFileList (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    write-file /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar.SwiftConstValuesFileList
+
+WriteAuxiliaryFile /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar.LinkFileList (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    write-file /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar.LinkFileList
+
+WriteAuxiliaryFile /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar-OutputFileMap.json (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    write-file /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar-OutputFileMap.json
+
+WriteAuxiliaryFile /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/AIRadar.hmap (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    write-file /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/AIRadar.hmap
+
+WriteAuxiliaryFile /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/AIRadar.DependencyStaticMetadataFileList (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    write-file /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/AIRadar.DependencyStaticMetadataFileList
+
+WriteAuxiliaryFile /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/AIRadar.DependencyMetadataFileList (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    write-file /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/AIRadar.DependencyMetadataFileList
+
+WriteAuxiliaryFile /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/AIRadar-project-headers.hmap (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    write-file /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/AIRadar-project-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/AIRadar-own-target-headers.hmap (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    write-file /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/AIRadar-own-target-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/AIRadar-generated-files.hmap (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    write-file /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/AIRadar-generated-files.hmap
+
+WriteAuxiliaryFile /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/AIRadar-all-target-headers.hmap (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    write-file /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/AIRadar-all-target-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/AIRadar-all-non-framework-target-headers.hmap (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    write-file /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/AIRadar-all-non-framework-target-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/AIRadar-DebugDylibPath-normal-arm64.txt (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    write-file /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/AIRadar-DebugDylibPath-normal-arm64.txt
+
+WriteAuxiliaryFile /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/AIRadar-DebugDylibInstallName-normal-arm64.txt (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    write-file /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/AIRadar-DebugDylibInstallName-normal-arm64.txt
+
+MkDir /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    /bin/mkdir -p /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest
+
+MkDir /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    /bin/mkdir -p /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns
+
+MkDir /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/Frameworks (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    /bin/mkdir -p /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/Frameworks
+
+MkDir /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    /bin/mkdir -p /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app
+
+MkDir /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/assetcatalog_output/unthinned (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    /bin/mkdir -p /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/assetcatalog_output/unthinned
+
+MkDir /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/assetcatalog_output/thinned (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    /bin/mkdir -p /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/assetcatalog_output/thinned
+
+Ld /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/__preview.dylib normal (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios17.0-simulator -dynamiclib -isysroot /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -O0 -L/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator -F/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator -install_name @rpath/AIRadar.debug.dylib -dead_strip -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -debug_variant -Xlinker -dependency_info -Xlinker /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar_dependency_info.dat -o /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/__preview.dylib
+
+GenerateAssetSymbols /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/Assets.xcassets (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    /Applications/Xcode_26.3.app/Contents/Developer/usr/bin/actool /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/Assets.xcassets --compile /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app --output-format human-readable-text --notices --warnings --export-dependency-info /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/assetcatalog_dependencies --output-partial-info-plist /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/assetcatalog_generated_info.plist --app-icon AppIcon --accent-color AccentColor --compress-pngs --enable-on-demand-resources YES --development-region en --target-device iphone --minimum-deployment-target 17.0 --platform iphonesimulator --bundle-identifier com.heatblast0421.airadar --generate-swift-asset-symbols /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/DerivedSources/GeneratedAssetSymbols.swift --generate-objc-asset-symbols /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/DerivedSources/GeneratedAssetSymbols.h --generate-asset-symbol-index /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/DerivedSources/GeneratedAssetSymbols-Index.plist
+/* com.apple.actool.compilation-results */
+/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/DerivedSources/GeneratedAssetSymbols-Index.plist
+/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/DerivedSources/GeneratedAssetSymbols.h
+/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/DerivedSources/GeneratedAssetSymbols.swift
+
+
+Copy /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/Frameworks/libXCTestSwiftSupport.dylib /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/Frameworks
+
+Copy /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/Frameworks/libXCTestBundleInject.dylib /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libXCTestBundleInject.dylib (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libXCTestBundleInject.dylib /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/Frameworks
+
+Copy /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/Frameworks/XCUnit.framework /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/XCUnit.framework (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/XCUnit.framework /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/Frameworks
+
+Copy /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/Frameworks/XCUIAutomation.framework /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCUIAutomation.framework (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCUIAutomation.framework /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/Frameworks
+
+Copy /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/Frameworks/XCTestSupport.framework /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/XCTestSupport.framework (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/XCTestSupport.framework /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/Frameworks
+
+Copy /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/Frameworks/XCTestCore.framework /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/XCTestCore.framework (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/XCTestCore.framework /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/Frameworks
+
+Copy /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/Frameworks/XCTest.framework /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/Frameworks
+
+Copy /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/Frameworks/XCTAutomationSupport.framework /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/XCTAutomationSupport.framework (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/XCTAutomationSupport.framework /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/Frameworks
+
+Copy /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/Frameworks/Testing.framework /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/Testing.framework (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/Testing.framework /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/Frameworks
+
+CompileAssetCatalogVariant thinned /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/Assets.xcassets (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    /Applications/Xcode_26.3.app/Contents/Developer/usr/bin/actool /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/Assets.xcassets --compile /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/assetcatalog_output/thinned --output-format human-readable-text --notices --warnings --export-dependency-info /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/assetcatalog_dependencies_thinned --output-partial-info-plist /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/assetcatalog_generated_info.plist_thinned --app-icon AppIcon --accent-color AccentColor --compress-pngs --enable-on-demand-resources YES --filter-for-thinning-device-configuration iPhone18,1 --filter-for-device-os-version 26.2 --development-region en --target-device iphone --minimum-deployment-target 17.0 --platform iphonesimulator
+/* com.apple.actool.compilation-results */
+/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/assetcatalog_generated_info.plist_thinned
+/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/assetcatalog_output/thinned/AppIcon60x60@2x.png
+/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/assetcatalog_output/thinned/AppIcon76x76@2x~ipad.png
+/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/assetcatalog_output/thinned/Assets.car
+
+
+SwiftDriver AIRadar normal arm64 com.apple.xcode.tools.swift.compiler (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-SwiftDriver -- /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name AIRadar -Onone -enforce-exclusivity\=checked @/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -target arm64-apple-ios17.0-simulator -g -module-cache-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator -F /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator -emit-localized-strings -emit-localized-strings-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64 -c -j3 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/SDKStatCaches.noindex/iphonesimulator26.2-23C57-dc75598d0054f22ec865fa860f139d72e244bd9a5feaf902f95f61bf06266e52.sdkstatcache -output-file-map /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex -sdk-module-cache-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/AIRadar-generated-files.hmap -Xcc -I/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/AIRadar-own-target-headers.hmap -Xcc -I/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/AIRadar-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/AIRadar-project-headers.hmap -Xcc -I/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/DerivedSources/arm64 -Xcc -I/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar-Swift.h -working-directory /Users/runner/work/ai-radar-ios/ai-radar-ios/ios -experimental-emit-module-separately -disable-cmo
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/DeveloperToolsSupport-63U7D7MU71BLSLINWC5SG98LJ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/_Builtin_stdarg-A0WNJ95X6VRYJIJQOMOI0EOBK.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/_SwiftConcurrencyShims-BSH74LB3D64YNO6AS5QBZD0LK.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/_Builtin_stdbool-AUQOB8DB8MI9WQWX24JWHX0HJ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/_Builtin_float-79LFACNJIVJO856ZWP3OUABY2.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/ptrcheck-1YYAER3OA9TDU7D3KSV8W03SF.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/_Builtin_stddef-45AFGG6R42WKKGRN7JU0WWUY.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/ptrauth-73MW2HU7Z1OHYPC3Y8Z93VDYO.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/SwiftShims-5X2Z3OZG40ASHOLCPHV9VSUHE.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/_AvailabilityInternal-BXXTC2J6YE1OT29YJ3OURVF5I.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/_DarwinFoundation1-8M1HF7K7UONOPLYDILMPGDDPA.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/_Builtin_limits-4KPF1FG4DCMUQNGP5ICTRWPXQ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/_DarwinFoundation2-12Q35SERADSIFGQEKF57VDLE6.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/sys_types-A1N0BPYEUIKQ82VRZ8WXT9U8G.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/_Builtin_stdint-1YIO5Z7BQUZNKUW5M3CFAPHI8.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/_Builtin_tgmath-8D0C7MZG579ERNB6Q2I7IPXH2.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/_DarwinFoundation3-A6NUGPYCJ58RUJ90EJSK0AD15.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/_Builtin_stdatomic-2KPXGUTO6RLZ7WWOTUA8FTS8W.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/_Builtin_intrinsics-47HE461J30X5CDNGATCMPMF6X.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/_Builtin_inttypes-AWYX7E10S2RCG7BRNUCNSODX9.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/Darwin-58JD5RWGUA8ZEXZ2SJTCLLAWI.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/simd-BV2B25RFRS0YEPMCRZZVXX12W.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/ObjectiveC-19Q3KA2UD64N88ICGQ1PT6XPG.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/MachO-4M4BKFTU4455F8WFDK9LQGR0R.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/os_object-2MFY8MDJSLDWTBO0B3KXVB9A1.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/os_workgroup-74DU8XK8NWKYXDX25ANRDRKTD.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/Dispatch-DPR9WAPG77LH4ROPUOW4DCXIE.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/Spatial-3A5XG4CGGCWNEBO1880VPR28Z.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/CoreFoundation-6BTQIU3NJIQW9G76U1WMA4YQZ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/XPC-6EGHRRDJ6VCF5TJILRNG3STDZ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/Security-CL353T5VT4CSNYBYA5IRCZ7ZL.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/os-8R49UXCDVZX0IEMVJ7OENCFO6.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/CFNetwork-5IU5NFEMEOSISVPZJXLJV5Z2W.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/CoreGraphics-EZOKFP3VOOIJQFJJFDW25SLJJ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/Foundation-1AGLL1HG06D5MBHVQK1W8ZD1Q.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/ImageIO-350DGY0D5VNDCA4OTZ88RFKM4.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/CoreText-AVTC25HAP2GLQQZRNQ7JSWL1B.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/IOSurface-F59UM53ZHFLE57BESDYJJDXAJ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/BackgroundTasks-86H1MM0JLLEULWTXSE9XVPXGF.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/DataDetection-72CM8V2Y5NASE09GN7LO5VTHV.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/CoreTransferable-53QZP83FUPH0AS6GHA1ABRXIC.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/Metal-70XE7888WY0IY16FZO2GR76BU.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/OpenGLES-31YYOLSMMPEY1I69O9FJ3XXXA.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/FileProvider-AR51WC0JQJ6IKWE95ETFRQJOI.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/UIUtilities-F2S4IXIC6XGQCP5J5GDXP5XZP.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/CoreData-9IMU7O6QHD3ZBQ9LBP1PCMAXM.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/Symbols-64HK9K3BSEFOJNLP6A8R5S99V.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/UniformTypeIdentifiers-7WMLK99DB22EVJ1759S2N1H53.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/CoreVideo-4CWEXQUHGC2J6ATC74DOGX2IG.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/Accessibility-CJ5AKCB4TR3AP5NPKZJSU7OWW.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/UserNotifications-EIA7RCIYQ6270QK3NI6B6HJGL.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/OSLog-92DONPJF8HB9BNCDEAKJRZCDW.pcm
+
+LinkAssetCatalog /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/Assets.xcassets (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-linkAssetCatalog --thinned /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/assetcatalog_output/thinned --thinned-dependencies /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/assetcatalog_dependencies_thinned --thinned-info-plist-content /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/assetcatalog_generated_info.plist_thinned --unthinned /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/assetcatalog_output/unthinned --unthinned-dependencies /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/assetcatalog_dependencies_unthinned --unthinned-info-plist-content /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/assetcatalog_generated_info.plist_unthinned --output /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app --plist-output /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/assetcatalog_generated_info.plist
+note: Emplaced /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/AppIcon60x60@2x.png (in target 'AIRadar' from project 'AIRadar')
+note: Emplaced /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/AppIcon76x76@2x~ipad.png (in target 'AIRadar' from project 'AIRadar')
+note: Emplaced /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/Assets.car (in target 'AIRadar' from project 'AIRadar')
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/QuartzCore-AZ7J4MXGZ1JS7Z29F1LCKCSYE.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/CoreImage-CHLG9CU45IE7QGJQCAZYDQOPX.pcm
+
+ProcessInfoPlistFile /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/Info.plist /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/Support/Info.plist (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-infoPlistUtility /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/Support/Info.plist -producttype com.apple.product-type.application -genpkginfo /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -additionalcontentfile /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/assetcatalog_generated_info.plist -o /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/Info.plist
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/SwiftUICore-A1I68P83KKKKQAX0MI5OK7JHF.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/UIKit-5XIW0DZHLKCXJKX6FCIU4B9HA.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/SwiftUI-6NIA6BGCCREQYLSODK25YUWFK.pcm
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ AIRadar (in target 'AIRadar' from project 'AIRadar')
+
+EmitSwiftModule normal arm64 (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    
+
+SwiftCompile normal arm64 Compiling\ AIRadarApp.swift,\ RootView.swift,\ APIModels.swift,\ JSONValue.swift,\ APIClient.swift,\ BookmarkStore.swift,\ NotificationService.swift,\ PersonalRanker.swift /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/App/AIRadarApp.swift /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/App/RootView.swift /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/Models/APIModels.swift /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/Models/JSONValue.swift /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/Services/APIClient.swift /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/Services/BookmarkStore.swift /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/Services/NotificationService.swift /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/Services/PersonalRanker.swift (in target 'AIRadar' from project 'AIRadar')
+SwiftCompile normal arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/App/AIRadarApp.swift (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    
+
+SwiftCompile normal arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/App/RootView.swift (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    
+
+SwiftCompile normal arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/Models/APIModels.swift (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    
+
+SwiftCompile normal arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/Models/JSONValue.swift (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    
+
+SwiftCompile normal arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/Services/APIClient.swift (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    
+
+SwiftCompile normal arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/Services/BookmarkStore.swift (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    
+
+SwiftCompile normal arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/Services/NotificationService.swift (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    
+
+SwiftCompile normal arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/Services/PersonalRanker.swift (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    
+
+SwiftCompile normal arm64 Compiling\ Preferences.swift,\ FeedViewModels.swift,\ CommonViews.swift,\ Theme.swift,\ ItemDetailView.swift,\ FeedCardView.swift,\ FeedScreen.swift /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/Services/Preferences.swift /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/ViewModels/FeedViewModels.swift /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/Views/Components/CommonViews.swift /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/Views/Components/Theme.swift /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/Views/Detail/ItemDetailView.swift /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/Views/Feed/FeedCardView.swift /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/Views/Feed/FeedScreen.swift (in target 'AIRadar' from project 'AIRadar')
+
+SwiftCompile normal arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/Services/Preferences.swift (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    
+
+SwiftCompile normal arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/ViewModels/FeedViewModels.swift (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    
+
+SwiftCompile normal arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/Views/Components/CommonViews.swift (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    
+
+SwiftCompile normal arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/Views/Components/Theme.swift (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    
+
+SwiftCompile normal arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/Views/Detail/ItemDetailView.swift (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    
+
+SwiftCompile normal arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/Views/Feed/FeedCardView.swift (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    
+
+SwiftCompile normal arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/Views/Feed/FeedScreen.swift (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    
+
+SwiftCompile normal arm64 Compiling\ PulseScreen.swift,\ GitHubRadarScreen.swift,\ RepoDetailView.swift,\ SavedScreen.swift,\ SearchScreen.swift,\ SettingsScreen.swift,\ GeneratedAssetSymbols.swift /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/Views/Feed/PulseScreen.swift /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/Views/GitHub/GitHubRadarScreen.swift /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/Views/GitHub/RepoDetailView.swift /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/Views/Saved/SavedScreen.swift /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/Views/Search/SearchScreen.swift /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/Views/Settings/SettingsScreen.swift /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/DerivedSources/GeneratedAssetSymbols.swift (in target 'AIRadar' from project 'AIRadar')
+
+SwiftCompile normal arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/Views/Feed/PulseScreen.swift (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    
+
+SwiftCompile normal arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/Views/GitHub/GitHubRadarScreen.swift (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    
+
+SwiftCompile normal arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/Views/GitHub/RepoDetailView.swift (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    
+
+SwiftCompile normal arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/Views/Saved/SavedScreen.swift (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    
+
+SwiftCompile normal arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/Views/Search/SearchScreen.swift (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    
+
+SwiftCompile normal arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadar/Views/Settings/SettingsScreen.swift (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    
+
+SwiftCompile normal arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/DerivedSources/GeneratedAssetSymbols.swift (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for AIRadar (in target 'AIRadar' from project 'AIRadar')
+
+SwiftDriver\ Compilation\ Requirements AIRadar normal arm64 com.apple.xcode.tools.swift.compiler (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name AIRadar -Onone -enforce-exclusivity\=checked @/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -target arm64-apple-ios17.0-simulator -g -module-cache-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator -F /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator -emit-localized-strings -emit-localized-strings-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64 -c -j3 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/SDKStatCaches.noindex/iphonesimulator26.2-23C57-dc75598d0054f22ec865fa860f139d72e244bd9a5feaf902f95f61bf06266e52.sdkstatcache -output-file-map /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex -sdk-module-cache-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/AIRadar-generated-files.hmap -Xcc -I/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/AIRadar-own-target-headers.hmap -Xcc -I/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/AIRadar-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/AIRadar-project-headers.hmap -Xcc -I/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/DerivedSources/arm64 -Xcc -I/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar-Swift.h -working-directory /Users/runner/work/ai-radar-ios/ai-radar-ios/ios -experimental-emit-module-separately -disable-cmo
+
+SwiftDriverJobDiscovery normal arm64 Compiling Preferences.swift, FeedViewModels.swift, CommonViews.swift, Theme.swift, ItemDetailView.swift, FeedCardView.swift, FeedScreen.swift (in target 'AIRadar' from project 'AIRadar')
+
+SwiftDriverJobDiscovery normal arm64 Compiling PulseScreen.swift, GitHubRadarScreen.swift, RepoDetailView.swift, SavedScreen.swift, SearchScreen.swift, SettingsScreen.swift, GeneratedAssetSymbols.swift (in target 'AIRadar' from project 'AIRadar')
+
+SwiftMergeGeneratedHeaders /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/DerivedSources/AIRadar-Swift.h /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar-Swift.h (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-swiftHeaderTool -arch arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar-Swift.h -o /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/DerivedSources/AIRadar-Swift.h
+
+Copy /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar.swiftmodule (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar.swiftmodule /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.swiftmodule/arm64-apple-ios-simulator.swiftmodule
+
+Copy /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.swiftmodule/arm64-apple-ios-simulator.swiftdoc /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar.swiftdoc (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar.swiftdoc /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.swiftmodule/arm64-apple-ios-simulator.swiftdoc
+
+Copy /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.swiftmodule/arm64-apple-ios-simulator.abi.json /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar.abi.json (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar.abi.json /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.swiftmodule/arm64-apple-ios-simulator.abi.json
+
+Copy /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar.swiftsourceinfo (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar.swiftsourceinfo /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo
+
+SwiftDriverJobDiscovery normal arm64 Compiling AIRadarApp.swift, RootView.swift, APIModels.swift, JSONValue.swift, APIClient.swift, BookmarkStore.swift, NotificationService.swift, PersonalRanker.swift (in target 'AIRadar' from project 'AIRadar')
+
+SwiftDriver\ Compilation AIRadar normal arm64 com.apple.xcode.tools.swift.compiler (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-Swift-Compilation -- /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name AIRadar -Onone -enforce-exclusivity\=checked @/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -target arm64-apple-ios17.0-simulator -g -module-cache-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator -F /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator -emit-localized-strings -emit-localized-strings-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64 -c -j3 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/SDKStatCaches.noindex/iphonesimulator26.2-23C57-dc75598d0054f22ec865fa860f139d72e244bd9a5feaf902f95f61bf06266e52.sdkstatcache -output-file-map /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex -sdk-module-cache-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/AIRadar-generated-files.hmap -Xcc -I/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/AIRadar-own-target-headers.hmap -Xcc -I/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/AIRadar-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/AIRadar-project-headers.hmap -Xcc -I/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/DerivedSources/arm64 -Xcc -I/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar-Swift.h -working-directory /Users/runner/work/ai-radar-ios/ai-radar-ios/ios -experimental-emit-module-separately -disable-cmo
+
+SwiftDriver AIRadarTests normal arm64 com.apple.xcode.tools.swift.compiler (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-SwiftDriver -- /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name AIRadarTests -Onone -enforce-exclusivity\=checked @/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/AIRadarTests.SwiftFileList -DDEBUG -plugin-path /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -target arm64-apple-ios17.0-simulator -g -module-cache-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator -Isystem /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator -F /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk/Developer/Library/Frameworks -parse-as-library -c -j3 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/SDKStatCaches.noindex/iphonesimulator26.2-23C57-dc75598d0054f22ec865fa860f139d72e244bd9a5feaf902f95f61bf06266e52.sdkstatcache -output-file-map /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/AIRadarTests-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex -sdk-module-cache-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/AIRadarTests.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/AIRadarTests_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/AIRadarTests-generated-files.hmap -Xcc -I/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/AIRadarTests-own-target-headers.hmap -Xcc -I/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/AIRadarTests-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/AIRadarTests-project-headers.hmap -Xcc -I/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/DerivedSources/arm64 -Xcc -I/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/AIRadarTests-Swift.h -working-directory /Users/runner/work/ai-radar-ios/ai-radar-ios/ios -experimental-emit-module-separately -disable-cmo
+
+Ld /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/AIRadar.debug.dylib normal (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios17.0-simulator -dynamiclib -isysroot /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -O0 -L/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -L/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator -F/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -F/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator -filelist /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar.LinkFileList -install_name @rpath/AIRadar.debug.dylib -Xlinker -rpath -Xlinker /usr/lib/swift -Xlinker -rpath -Xlinker @executable_path/Frameworks -dead_strip -Xlinker -object_path_lto -Xlinker /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar_lto.o -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -debug_variant -Xlinker -dependency_info -Xlinker /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar_dependency_info.dat -fobjc-link-runtime -fprofile-instr-generate -L/Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar.swiftmodule @/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar-linker-args.resp -Xlinker -alias -Xlinker _main -Xlinker ___debug_main_executable_dylib_entry_point -o /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/AIRadar.debug.dylib
+
+ConstructStubExecutorLinkFileList /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/AIRadar-ExecutorLinkFileList-normal-arm64.txt (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    construct-stub-executor-link-file-list /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/AIRadar.debug.dylib /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libPreviewsJITStubExecutor_no_swift_entry_point.a /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libPreviewsJITStubExecutor.a --output /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/AIRadar-ExecutorLinkFileList-normal-arm64.txt
+note: Using stub executor library with Swift entry point. (in target 'AIRadar' from project 'AIRadar')
+
+Ld /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/AIRadar normal (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios17.0-simulator -isysroot /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -O0 -L/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator -F/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator -Xlinker -rpath -Xlinker @executable_path -Xlinker -rpath -Xlinker @executable_path/Frameworks -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -debug_variant -e ___debug_blank_executor_main -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_dylib -Xlinker /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/AIRadar-DebugDylibPath-normal-arm64.txt -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_instlnm -Xlinker /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/AIRadar-DebugDylibInstallName-normal-arm64.txt -Xlinker -filelist -Xlinker /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/AIRadar-ExecutorLinkFileList-normal-arm64.txt /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/AIRadar.debug.dylib -o /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/AIRadar
+
+CopySwiftLibs /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-swiftStdLibTool --copy --verbose --scan-executable /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/AIRadar.debug.dylib --scan-folder /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/Frameworks --scan-folder /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns --scan-folder /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/SystemExtensions --scan-folder /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/Extensions --platform iphonesimulator --toolchain /var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v17.3.7003.10.o5B5pc/Metal.xctoolchain --toolchain /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/Frameworks --strip-bitcode --strip-bitcode-tool /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+Ignoring --strip-bitcode because --sign was not passed
+
+ExtractAppIntentsMetadata (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v17.3.7003.10.o5B5pc/Metal.xctoolchain --module-name AIRadar --sdk-root /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk --xcode-version 17C529 --platform-family iOS --deployment-target 17.0 --bundle-identifier com.heatblast0421.airadar --output /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app --target-triple arm64-apple-ios17.0-simulator --binary-file /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/AIRadar --dependency-file /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar_dependency_info.dat --stringsdata-file /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar.SwiftFileList --metadata-file-list /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/AIRadar.DependencyMetadataFileList --static-metadata-file-list /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/AIRadar.DependencyStaticMetadataFileList --swift-const-vals-list /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/Objects-normal/arm64/AIRadar.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --validate-assistant-intents --no-app-shortcuts-localization
+2026-10-20 10:22:47.095 appintentsmetadataprocessor[4874:18220] Starting appintentsmetadataprocessor export
+2026-10-20 10:22:47.100 appintentsmetadataprocessor[4874:18220] warning: Metadata extraction skipped. No AppIntents.framework dependency found.
+
+AppIntentsSSUTraining (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsnltrainingprocessor --infoplist-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/Info.plist --temp-dir-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/ssu --bundle-id com.heatblast0421.airadar --product-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app --extracted-metadata-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/Metadata.appintents --metadata-file-list /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadar.build/AIRadar.DependencyMetadataFileList --archive-ssu-assets
+2026-10-20 10:22:47.133 appintentsnltrainingprocessor[4875:18222] Parsing options for appintentsnltrainingprocessor
+2026-10-20 10:22:47.134 appintentsnltrainingprocessor[4875:18222] No AppShortcuts found - Skipping.
+
+ProcessInfoPlistFile /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest/Info.plist /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/empty-AIRadarTests.plist (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-infoPlistUtility /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/empty-AIRadarTests.plist -producttype com.apple.product-type.bundle.unit-test -expandbuildsettings -format binary -platform iphonesimulator -o /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest/Info.plist
+
+CpResource /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest/search.json /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadarTests/Fixtures/search.json (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadarTests/Fixtures/search.json /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest
+
+CpResource /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest/repo_detail.json /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadarTests/Fixtures/repo_detail.json (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadarTests/Fixtures/repo_detail.json /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest
+
+CpResource /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest/real_repo_detail.json /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadarTests/Fixtures/real_repo_detail.json (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadarTests/Fixtures/real_repo_detail.json /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest
+
+CpResource /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest/real_meta.json /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadarTests/Fixtures/real_meta.json (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadarTests/Fixtures/real_meta.json /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest
+
+CpResource /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest/real_item_detail.json /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadarTests/Fixtures/real_item_detail.json (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadarTests/Fixtures/real_item_detail.json /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest
+
+CpResource /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest/real_github_emerging.json /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadarTests/Fixtures/real_github_emerging.json (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadarTests/Fixtures/real_github_emerging.json /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest
+
+CpResource /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest/real_feed_pulse.json /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadarTests/Fixtures/real_feed_pulse.json (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadarTests/Fixtures/real_feed_pulse.json /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest
+
+CpResource /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest/meta.json /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadarTests/Fixtures/meta.json (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadarTests/Fixtures/meta.json /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest
+
+CpResource /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest/item_detail.json /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadarTests/Fixtures/item_detail.json (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadarTests/Fixtures/item_detail.json /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest
+
+CpResource /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest/github_emerging_1.json /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadarTests/Fixtures/github_emerging_1.json (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadarTests/Fixtures/github_emerging_1.json /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest
+
+CpResource /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest/feed_pulse_top_1.json /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadarTests/Fixtures/feed_pulse_top_1.json (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadarTests/Fixtures/feed_pulse_top_1.json /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest
+
+CpResource /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest/briefing.json /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadarTests/Fixtures/briefing.json (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadarTests/Fixtures/briefing.json /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules/XCUIAutomation-1CUKD7N083BXHQPLTZLCE5CE8.pcm
+
+SwiftExplicitDependencyCompileModuleFromInterface arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules/XCUIAutomation-2CZZTN3H2VAS0.swiftmodule
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules/XCTest-58MVSW7FJXL5B17U8LO5DHKZR.pcm
+
+SwiftExplicitDependencyCompileModuleFromInterface arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules/XCTest-27JUAXA6CDJZQ.swiftmodule
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ AIRadarTests (in target 'AIRadarTests' from project 'AIRadar')
+
+SwiftCompile normal arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadarTests/AIRadarTests.swift (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    
+
+SwiftCompile normal arm64 Compiling\ AIRadarTests.swift /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadarTests/AIRadarTests.swift (in target 'AIRadarTests' from project 'AIRadar')
+SwiftCompile normal arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/ios/AIRadarTests/AIRadarTests.swift (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for AIRadarTests (in target 'AIRadarTests' from project 'AIRadar')
+
+SwiftDriver\ Compilation\ Requirements AIRadarTests normal arm64 com.apple.xcode.tools.swift.compiler (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name AIRadarTests -Onone -enforce-exclusivity\=checked @/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/AIRadarTests.SwiftFileList -DDEBUG -plugin-path /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -target arm64-apple-ios17.0-simulator -g -module-cache-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator -Isystem /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator -F /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk/Developer/Library/Frameworks -parse-as-library -c -j3 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/SDKStatCaches.noindex/iphonesimulator26.2-23C57-dc75598d0054f22ec865fa860f139d72e244bd9a5feaf902f95f61bf06266e52.sdkstatcache -output-file-map /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/AIRadarTests-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex -sdk-module-cache-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/AIRadarTests.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/AIRadarTests_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/AIRadarTests-generated-files.hmap -Xcc -I/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/AIRadarTests-own-target-headers.hmap -Xcc -I/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/AIRadarTests-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/AIRadarTests-project-headers.hmap -Xcc -I/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/DerivedSources/arm64 -Xcc -I/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/AIRadarTests-Swift.h -working-directory /Users/runner/work/ai-radar-ios/ai-radar-ios/ios -experimental-emit-module-separately -disable-cmo
+
+Copy /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadarTests.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/AIRadarTests.swiftmodule (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/AIRadarTests.swiftmodule /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadarTests.swiftmodule/arm64-apple-ios-simulator.swiftmodule
+
+SwiftMergeGeneratedHeaders /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/DerivedSources/AIRadarTests-Swift.h /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/AIRadarTests-Swift.h (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-swiftHeaderTool -arch arm64 /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/AIRadarTests-Swift.h -o /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/DerivedSources/AIRadarTests-Swift.h
+
+Copy /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadarTests.swiftmodule/arm64-apple-ios-simulator.swiftdoc /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/AIRadarTests.swiftdoc (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/AIRadarTests.swiftdoc /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadarTests.swiftmodule/arm64-apple-ios-simulator.swiftdoc
+
+Copy /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadarTests.swiftmodule/arm64-apple-ios-simulator.abi.json /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/AIRadarTests.abi.json (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/AIRadarTests.abi.json /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadarTests.swiftmodule/arm64-apple-ios-simulator.abi.json
+
+Copy /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadarTests.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/AIRadarTests.swiftsourceinfo (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/AIRadarTests.swiftsourceinfo /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadarTests.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo
+
+SwiftDriverJobDiscovery normal arm64 Compiling AIRadarTests.swift (in target 'AIRadarTests' from project 'AIRadar')
+
+SwiftDriver\ Compilation AIRadarTests normal arm64 com.apple.xcode.tools.swift.compiler (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-Swift-Compilation -- /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name AIRadarTests -Onone -enforce-exclusivity\=checked @/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/AIRadarTests.SwiftFileList -DDEBUG -plugin-path /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -target arm64-apple-ios17.0-simulator -g -module-cache-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator -Isystem /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator -F /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk/Developer/Library/Frameworks -parse-as-library -c -j3 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/SDKStatCaches.noindex/iphonesimulator26.2-23C57-dc75598d0054f22ec865fa860f139d72e244bd9a5feaf902f95f61bf06266e52.sdkstatcache -output-file-map /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/AIRadarTests-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex -sdk-module-cache-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/AIRadarTests.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/AIRadarTests_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/AIRadarTests-generated-files.hmap -Xcc -I/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/AIRadarTests-own-target-headers.hmap -Xcc -I/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/AIRadarTests-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/AIRadarTests-project-headers.hmap -Xcc -I/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/DerivedSources/arm64 -Xcc -I/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/AIRadarTests-Swift.h -working-directory /Users/runner/work/ai-radar-ios/ai-radar-ios/ios -experimental-emit-module-separately -disable-cmo
+
+Ld /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest/AIRadarTests normal (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios17.0-simulator -bundle -isysroot /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -O0 -L/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -L/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator -L/Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -F/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator -iframework /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -iframework /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk/Developer/Library/Frameworks -filelist /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/AIRadarTests.LinkFileList -Xlinker -rpath -Xlinker /usr/lib/swift -Xlinker -rpath -Xlinker @loader_path/Frameworks -Xlinker -rpath -Xlinker @executable_path/Frameworks -dead_strip -bundle_loader /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/AIRadar -Xlinker -object_path_lto -Xlinker /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/AIRadarTests_lto.o -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -debug_variant -Xlinker -dependency_info -Xlinker /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/AIRadarTests_dependency_info.dat -fobjc-link-runtime -fprofile-instr-generate -L/Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/AIRadarTests.swiftmodule @/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/AIRadarTests-linker-args.resp -Xlinker -needed_framework -Xlinker XCTest -framework XCTest -Xlinker -needed-lXCTestSwiftSupport -lXCTestSwiftSupport /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/AIRadar.debug.dylib -o /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest/AIRadarTests
+
+CopySwiftLibs /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-swiftStdLibTool --copy --verbose --scan-executable /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest/AIRadarTests --scan-folder /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest/Frameworks --scan-folder /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest/PlugIns --scan-folder /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest/SystemExtensions --scan-folder /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest/Extensions --platform iphonesimulator --toolchain /var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v17.3.7003.10.o5B5pc/Metal.xctoolchain --toolchain /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest/Frameworks --strip-bitcode --scan-executable /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib --strip-bitcode-tool /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+Ignoring --strip-bitcode because --sign was not passed
+
+ExtractAppIntentsMetadata (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v17.3.7003.10.o5B5pc/Metal.xctoolchain --module-name AIRadarTests --sdk-root /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk --xcode-version 17C529 --platform-family iOS --deployment-target 17.0 --bundle-identifier com.heatblast0421.airadar.tests --output /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest --target-triple arm64-apple-ios17.0-simulator --binary-file /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest/AIRadarTests --dependency-file /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/AIRadarTests_dependency_info.dat --stringsdata-file /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/AIRadarTests.SwiftFileList --metadata-file-list /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/AIRadarTests.DependencyMetadataFileList --static-metadata-file-list /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/AIRadarTests.DependencyStaticMetadataFileList --swift-const-vals-list /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/Objects-normal/arm64/AIRadarTests.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --validate-assistant-intents --no-app-shortcuts-localization
+2026-10-20 10:22:49.450 appintentsmetadataprocessor[4909:18396] Starting appintentsmetadataprocessor export
+2026-10-20 10:22:49.453 appintentsmetadataprocessor[4909:18396] warning: Metadata extraction skipped. No AppIntents.framework dependency found.
+
+AppIntentsSSUTraining (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsnltrainingprocessor --infoplist-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest/Info.plist --temp-dir-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/ssu --bundle-id com.heatblast0421.airadar.tests --product-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest --extracted-metadata-path /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest/Metadata.appintents --metadata-file-list /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Intermediates.noindex/AIRadar.build/Debug-iphonesimulator/AIRadarTests.build/AIRadarTests.DependencyMetadataFileList --archive-ssu-assets
+2026-10-20 10:22:49.480 appintentsnltrainingprocessor[4910:18397] Parsing options for appintentsnltrainingprocessor
+2026-10-20 10:22:49.481 appintentsnltrainingprocessor[4910:18397] No AppShortcuts found - Skipping.
+
+RegisterExecutionPolicyException /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-RegisterExecutionPolicyException /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest
+
+Touch /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest (in target 'AIRadarTests' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    /usr/bin/touch -c /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app/PlugIns/AIRadarTests.xctest
+
+RegisterExecutionPolicyException /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-RegisterExecutionPolicyException /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app
+
+Validate /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    builtin-validationUtility /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app -shallow-bundle -infoplist-subpath Info.plist
+
+Touch /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app (in target 'AIRadar' from project 'AIRadar')
+    cd /Users/runner/work/ai-radar-ios/ai-radar-ios/ios
+    /usr/bin/touch -c /Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app
+
+2026-10-20 10:25:57.858330+0000 AIRadar[6416:25852] [General] Failed to send CA Event for app launch measurements for ca_event_type: 0 event_name: com.apple.app_launch_measurement.FirstFramePresentationMetric
+2026-10-20 10:25:58.044735+0000 AIRadar[6416:25852] [General] Failed to send CA Event for app launch measurements for ca_event_type: 1 event_name: com.apple.app_launch_measurement.ExtendedLaunchMetrics
+2026-10-20 10:26:01.247348+0000 AIRadar[6416:25852] [connection] nw_socket_set_connection_idle [C1.1.1.1:3] setsockopt SO_CONNECTION_IDLE failed [42: Protocol not available]
+2026-10-20 10:26:01.946806+0000 AIRadar[6416:25955] [connection] nw_socket_set_connection_idle [C1.1.1.1:3] setsockopt SO_CONNECTION_IDLE failed [42: Protocol not available]
+Test Suite 'All tests' started at 2026-10-20 10:26:21.581.
+Test Suite 'AIRadarTests.xctest' started at 2026-10-20 10:26:21.584.
+Test Suite 'DecodingTests' started at 2026-10-20 10:26:21.584.
+Test Case '-[AIRadarTests.DecodingTests testFeedPage]' started.
+Test Case '-[AIRadarTests.DecodingTests testFeedPage]' passed (0.007 seconds).
+Test Case '-[AIRadarTests.DecodingTests testItemDetailWithExplanation]' started.
+Test Case '-[AIRadarTests.DecodingTests testItemDetailWithExplanation]' passed (0.016 seconds).
+Test Case '-[AIRadarTests.DecodingTests testMetaBriefingSearch]' started.
+Test Case '-[AIRadarTests.DecodingTests testMetaBriefingSearch]' passed (0.014 seconds).
+Test Case '-[AIRadarTests.DecodingTests testRealFeedPageDecodes]' started.
+Test Case '-[AIRadarTests.DecodingTests testRealFeedPageDecodes]' passed (0.004 seconds).
+Test Case '-[AIRadarTests.DecodingTests testRealItemDetailDecodes]' started.
+Test Case '-[AIRadarTests.DecodingTests testRealItemDetailDecodes]' passed (0.002 seconds).
+Test Case '-[AIRadarTests.DecodingTests testRealRepoDataDecodes]' started.
+Test Case '-[AIRadarTests.DecodingTests testRealRepoDataDecodes]' passed (0.043 seconds).
+Test Case '-[AIRadarTests.DecodingTests testRepoDetail]' started.
+Test Case '-[AIRadarTests.DecodingTests testRepoDetail]' passed (0.002 seconds).
+Test Suite 'DecodingTests' passed at 2026-10-20 10:26:21.704.
+	 Executed 7 tests, with 0 failures (0 unexpected) in 0.087 (0.120) seconds
+Test Suite 'JSONValueTests' started at 2026-10-20 10:26:21.705.
+Test Case '-[AIRadarTests.JSONValueTests testSnakeAndCamelLookup]' started.
+Test Case '-[AIRadarTests.JSONValueTests testSnakeAndCamelLookup]' passed (0.001 seconds).
+Test Case '-[AIRadarTests.JSONValueTests testTolerantShapes]' started.
+Test Case '-[AIRadarTests.JSONValueTests testTolerantShapes]' passed (0.001 seconds).
+Test Suite 'JSONValueTests' passed at 2026-10-20 10:26:21.708.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 0.002 (0.003) seconds
+Test Suite 'RankingTests' started at 2026-10-20 10:26:22.881.
+Test Case '-[AIRadarTests.RankingTests testBreakingAlertsNeedBaselineAndAreNotRepeated]' started.
+Test Case '-[AIRadarTests.RankingTests testBreakingAlertsNeedBaselineAndAreNotRepeated]' passed (0.010 seconds).
+Test Case '-[AIRadarTests.RankingTests testFormatting]' started.
+Test Case '-[AIRadarTests.RankingTests testFormatting]' passed (0.003 seconds).
+Test Case '-[AIRadarTests.RankingTests testForYouBoostsFollowedTopics]' started.
+Test Case '-[AIRadarTests.RankingTests testForYouBoostsFollowedTopics]' passed (0.001 seconds).
+Test Suite 'RankingTests' passed at 2026-10-20 10:26:22.896.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.014 (0.015) seconds
+Test Suite 'StoreTests' started at 2026-10-20 10:26:22.897.
+Test Case '-[AIRadarTests.StoreTests testBookmarksPersistAcrossInstances]' started.
+Test Case '-[AIRadarTests.StoreTests testBookmarksPersistAcrossInstances]' passed (0.022 seconds).
+Test Case '-[AIRadarTests.StoreTests testPreferencesPersist]' started.
+Test Case '-[AIRadarTests.StoreTests testPreferencesPersist]' passed (0.200 seconds).
+Test Suite 'StoreTests' passed at 2026-10-20 10:26:23.120.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 0.222 (0.223) seconds
+Test Suite 'AIRadarTests.xctest' passed at 2026-10-20 10:26:23.120.
+	 Executed 14 tests, with 0 failures (0 unexpected) in 0.325 (1.536) seconds
+Test Suite 'All tests' passed at 2026-10-20 10:26:23.120.
+	 Executed 14 tests, with 0 failures (0 unexpected) in 0.325 (1.540) seconds
+2026-10-20 10:26:24.076 xcodebuild[4114:16059] [MT] IDETestOperationsObserverDebug: 214.435 elapsed -- Testing started completed.
+2026-10-20 10:26:24.076 xcodebuild[4114:16059] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-10-20 10:26:24.076 xcodebuild[4114:16059] [MT] IDETestOperationsObserverDebug: 214.435 sec, +214.435 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/runner/work/ai-radar-ios/ai-radar-ios/build/sim/Logs/Test/Test-AIRadar-2026.10.20_10-22-19-+0000.xcresult
+
+** TEST SUCCEEDED **
+
+Testing started

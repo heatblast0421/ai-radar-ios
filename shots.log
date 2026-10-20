@@ -1,0 +1,85 @@
+app: build/sim/Build/Products/Debug-iphonesimulator/AIRadar.app
+    iPhone 17 Pro (E952A9B0-CC78-435C-BF08-06AD47FE1076) (Shutdown) 
+/Users/runner/work/_temp/4a89e8c9-3d5f-4592-8b1e-0757df891255.sh: line 10:  7304 Terminated: 15          ( sleep "$secs"; kill -9 $pid 2> /dev/null ) > /dev/null 2>&1
+Monitoring boot status for iPhone 17 Pro (E952A9B0-CC78-435C-BF08-06AD47FE1076).
+Device already booted, nothing to do.
+
+/Users/runner/work/_temp/4a89e8c9-3d5f-4592-8b1e-0757df891255.sh: line 4:  7362 Terminated: 15          ( sleep "$secs"; kill -9 $pid 2> /dev/null ) > /dev/null 2>&1
+/Users/runner/work/_temp/4a89e8c9-3d5f-4592-8b1e-0757df891255.sh: line 12:  7556 Terminated: 15          ( sleep "$secs"; kill -9 $pid 2> /dev/null ) > /dev/null 2>&1
+/Users/runner/work/_temp/4a89e8c9-3d5f-4592-8b1e-0757df891255.sh: line 15:  7827 Terminated: 15          ( sleep "$secs"; kill -9 $pid 2> /dev/null ) > /dev/null 2>&1
+item=18f922743caba570 repo=ebony-vinyl__dsh-our-free-model
+== 1-pulse
+/Users/runner/work/_temp/4a89e8c9-3d5f-4592-8b1e-0757df891255.sh: line 4:  9211 Killed: 9               "$@"
+launch rc=137
+Detected file type 'PNG' from extension
+Wrote screenshot to: ci/shots/1-pulse.png
+== 2-github
+/Users/runner/work/_temp/4a89e8c9-3d5f-4592-8b1e-0757df891255.sh: line 4: 12958 Killed: 9               "$@"
+launch rc=137
+Detected file type 'PNG' from extension
+Wrote screenshot to: ci/shots/2-github.png
+== 3-research
+com.heatblast0421.airadar: 17636
+/Users/runner/work/_temp/4a89e8c9-3d5f-4592-8b1e-0757df891255.sh: line 4: 17020 Terminated: 15          ( sleep "$secs"; kill -9 $pid 2> /dev/null ) > /dev/null 2>&1
+/Users/runner/work/_temp/4a89e8c9-3d5f-4592-8b1e-0757df891255.sh: line 17: 17551 Terminated: 15          ( sleep "$secs"; kill -9 $pid 2> /dev/null ) > /dev/null 2>&1
+Detected file type 'PNG' from extension
+Wrote screenshot to: ci/shots/3-research.png
+== 4-lab
+com.heatblast0421.airadar: 18670
+/Users/runner/work/_temp/4a89e8c9-3d5f-4592-8b1e-0757df891255.sh: line 4: 18638 Terminated: 15          ( sleep "$secs"; kill -9 $pid 2> /dev/null ) > /dev/null 2>&1
+/Users/runner/work/_temp/4a89e8c9-3d5f-4592-8b1e-0757df891255.sh: line 17: 18655 Terminated: 15          ( sleep "$secs"; kill -9 $pid 2> /dev/null ) > /dev/null 2>&1
+Detected file type 'PNG' from extension
+Wrote screenshot to: ci/shots/4-lab.png
+== 5-industry
+com.heatblast0421.airadar: 19432
+/Users/runner/work/_temp/4a89e8c9-3d5f-4592-8b1e-0757df891255.sh: line 4: 19417 Terminated: 15          ( sleep "$secs"; kill -9 $pid 2> /dev/null ) > /dev/null 2>&1
+/Users/runner/work/_temp/4a89e8c9-3d5f-4592-8b1e-0757df891255.sh: line 17: 19423 Terminated: 15          ( sleep "$secs"; kill -9 $pid 2> /dev/null ) > /dev/null 2>&1
+Detected file type 'PNG' from extension
+Wrote screenshot to: ci/shots/5-industry.png
+== 6-item
+com.heatblast0421.airadar: 19997
+/Users/runner/work/_temp/4a89e8c9-3d5f-4592-8b1e-0757df891255.sh: line 4: 19987 Terminated: 15          ( sleep "$secs"; kill -9 $pid 2> /dev/null ) > /dev/null 2>&1
+/Users/runner/work/_temp/4a89e8c9-3d5f-4592-8b1e-0757df891255.sh: line 17: 19992 Terminated: 15          ( sleep "$secs"; kill -9 $pid 2> /dev/null ) > /dev/null 2>&1
+Detected file type 'PNG' from extension
+Wrote screenshot to: ci/shots/6-item.png
+/Users/runner/work/_temp/4a89e8c9-3d5f-4592-8b1e-0757df891255.sh: line 30: 20563 Terminated: 15          ( sleep "$secs"; kill -9 $pid 2> /dev/null ) > /dev/null 2>&1
+== 7-repo
+com.heatblast0421.airadar: 20585
+/Users/runner/work/_temp/4a89e8c9-3d5f-4592-8b1e-0757df891255.sh: line 4: 20573 Terminated: 15          ( sleep "$secs"; kill -9 $pid 2> /dev/null ) > /dev/null 2>&1
+/Users/runner/work/_temp/4a89e8c9-3d5f-4592-8b1e-0757df891255.sh: line 17: 20580 Terminated: 15          ( sleep "$secs"; kill -9 $pid 2> /dev/null ) > /dev/null 2>&1
+Detected file type 'PNG' from extension
+Wrote screenshot to: ci/shots/7-repo.png
+== 8-settings
+com.heatblast0421.airadar: 21170
+/Users/runner/work/_temp/4a89e8c9-3d5f-4592-8b1e-0757df891255.sh: line 4: 21155 Terminated: 15          ( sleep "$secs"; kill -9 $pid 2> /dev/null ) > /dev/null 2>&1
+/Users/runner/work/_temp/4a89e8c9-3d5f-4592-8b1e-0757df891255.sh: line 17: 21166 Terminated: 15          ( sleep "$secs"; kill -9 $pid 2> /dev/null ) > /dev/null 2>&1
+Detected file type 'PNG' from extension
+Wrote screenshot to: ci/shots/8-settings.png
+/Users/runner/work/_temp/4a89e8c9-3d5f-4592-8b1e-0757df891255.sh: line 32: 22084 Terminated: 15          ( sleep "$secs"; kill -9 $pid 2> /dev/null ) > /dev/null 2>&1
+== 9-search
+com.heatblast0421.airadar: 22169
+/Users/runner/work/_temp/4a89e8c9-3d5f-4592-8b1e-0757df891255.sh: line 4: 22123 Terminated: 15          ( sleep "$secs"; kill -9 $pid 2> /dev/null ) > /dev/null 2>&1
+/Users/runner/work/_temp/4a89e8c9-3d5f-4592-8b1e-0757df891255.sh: line 17: 22148 Terminated: 15          ( sleep "$secs"; kill -9 $pid 2> /dev/null ) > /dev/null 2>&1
+Detected file type 'PNG' from extension
+Wrote screenshot to: ci/shots/9-search.png
+/Users/runner/work/_temp/4a89e8c9-3d5f-4592-8b1e-0757df891255.sh: line 33: 23048 Terminated: 15          ( sleep "$secs"; kill -9 $pid 2> /dev/null ) > /dev/null 2>&1
+== 10-pulse-light
+com.heatblast0421.airadar: 23089
+/Users/runner/work/_temp/4a89e8c9-3d5f-4592-8b1e-0757df891255.sh: line 4: 23062 Terminated: 15          ( sleep "$secs"; kill -9 $pid 2> /dev/null ) > /dev/null 2>&1
+/Users/runner/work/_temp/4a89e8c9-3d5f-4592-8b1e-0757df891255.sh: line 17: 23072 Terminated: 15          ( sleep "$secs"; kill -9 $pid 2> /dev/null ) > /dev/null 2>&1
+Detected file type 'PNG' from extension
+Wrote screenshot to: ci/shots/10-pulse-light.png
+total 17072
+drwxr-xr-x  12 runner  staff      384 Oct 20 10:33 .
+drwxr-xr-x   6 runner  staff      192 Oct 20 10:26 ..
+-rw-r--r--@  1 runner  staff  2178378 Oct 20 10:29 1-pulse.png
+-rw-r--r--@  1 runner  staff  1618911 Oct 20 10:33 10-pulse-light.png
+-rw-r--r--@  1 runner  staff  2177796 Oct 20 10:30 2-github.png
+-rw-r--r--@  1 runner  staff   439466 Oct 20 10:31 3-research.png
+-rw-r--r--@  1 runner  staff   450275 Oct 20 10:31 4-lab.png
+-rw-r--r--@  1 runner  staff   366365 Oct 20 10:31 5-industry.png
+-rw-r--r--@  1 runner  staff   423652 Oct 20 10:32 6-item.png
+-rw-r--r--@  1 runner  staff   411142 Oct 20 10:32 7-repo.png
+-rw-r--r--@  1 runner  staff   368731 Oct 20 10:32 8-settings.png
+-rw-r--r--@  1 runner  staff   284350 Oct 20 10:33 9-search.png
+/Users/runner/work/_temp/4a89e8c9-3d5f-4592-8b1e-0757df891255.sh: line 35: 23633 Terminated: 15          ( sleep "$secs"; kill -9 $pid 2> /dev/null ) > /dev/null 2>&1
