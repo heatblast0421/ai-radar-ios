@@ -77,7 +77,7 @@ struct StaleBanner: View {
     var body: some View {
         HStack(spacing: 8) {
             Image(systemName: "wifi.slash")
-            Text("Offline: showing the copy saved \(Formatting.relative(fetchedAt)). Pull down to retry.")
+            Text("Couldn't refresh. Showing the copy saved \(Formatting.relative(fetchedAt)). Pull down to retry.")
                 .font(.footnote)
         }
         .foregroundStyle(.orange)

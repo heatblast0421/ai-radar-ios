@@ -11,6 +11,10 @@ final class RepoDetailModel: ObservableObject {
     init(fileId: String) { self.fileId = fileId }
 
     func load() async {
+        await Task { await self.performLoad() }.value
+    }
+
+    private func performLoad() async {
         let path = "repos/\(fileId).json"
         if detail == nil, let cached = APIClient.shared.cached(path, as: RepoDetail.self) {
             detail = cached.value

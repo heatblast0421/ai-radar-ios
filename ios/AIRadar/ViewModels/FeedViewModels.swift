@@ -63,11 +63,16 @@ final class FeedViewModel: ObservableObject {
     }
 
     func reload() async {
+        await Task { await self.performReload() }.value
+    }
+
+    private func performReload() async {
         generation += 1
         let gen = generation
         if cards.isEmpty, let cached = api.cached(path(1), as: FeedPage.self) {
+            // Show the saved copy instantly while the network request runs (no warning yet).
             apply(cached.value, replace: true)
-            staleSince = cached.fetchedAt
+            phase = .loaded
         }
         if cards.isEmpty { phase = .loading }
         do {
@@ -78,7 +83,7 @@ final class FeedViewModel: ObservableObject {
             phase = .loaded
         } catch {
             guard gen == generation else { return }
-            if (error as? URLError)?.code == .cancelled { return }
+            if APIClient.isCancellation(error) { return }
             if cards.isEmpty {
                 phase = .failed(error.localizedDescription)
             } else {
@@ -88,6 +93,10 @@ final class FeedViewModel: ObservableObject {
     }
 
     func loadMore() async {
+        await Task { await self.performLoadMore() }.value
+    }
+
+    private func performLoadMore() async {
         guard hasMore, !isLoadingMore, phase == .loaded else { return }
         isLoadingMore = true
         defer { isLoadingMore = false }
@@ -97,6 +106,7 @@ final class FeedViewModel: ObservableObject {
             guard gen == generation else { return }
             apply(loaded.value, replace: false)
         } catch {
+            if APIClient.isCancellation(error) { return }
             // Keep what we have; the footer offers a retry.
             totalPages = page
         }
@@ -178,11 +188,16 @@ final class RepoListViewModel: ObservableObject {
     }
 
     func reload() async {
+        await Task { await self.performReload() }.value
+    }
+
+    private func performReload() async {
         generation += 1
         let gen = generation
         if repos.isEmpty, let cached = api.cached(path(1), as: RepoPage.self) {
+            // Show the saved copy instantly while the network request runs (no warning yet).
             apply(cached.value, replace: true)
-            staleSince = cached.fetchedAt
+            phase = .loaded
         }
         if repos.isEmpty { phase = .loading }
         do {
@@ -193,12 +208,16 @@ final class RepoListViewModel: ObservableObject {
             phase = .loaded
         } catch {
             guard gen == generation else { return }
-            if (error as? URLError)?.code == .cancelled { return }
+            if APIClient.isCancellation(error) { return }
             phase = repos.isEmpty ? .failed(error.localizedDescription) : .loaded
         }
     }
 
     func loadMore() async {
+        await Task { await self.performLoadMore() }.value
+    }
+
+    private func performLoadMore() async {
         guard hasMore, !isLoadingMore, phase == .loaded else { return }
         isLoadingMore = true
         defer { isLoadingMore = false }
@@ -208,6 +227,7 @@ final class RepoListViewModel: ObservableObject {
             guard gen == generation else { return }
             apply(loaded.value, replace: false)
         } catch {
+            if APIClient.isCancellation(error) { return }
             totalPages = page
         }
     }
@@ -259,6 +279,10 @@ final class AppModel: ObservableObject {
     }
 
     func refresh() async {
+        await Task { await self.performRefresh() }.value
+    }
+
+    private func performRefresh() async {
         await loadMeta()
         await loadBriefing()
     }
@@ -276,6 +300,7 @@ final class AppModel: ObservableObject {
             metaIsStale = loaded.isStale
             metaError = nil
         } catch {
+            if APIClient.isCancellation(error) { return }
             metaError = error.localizedDescription
         }
     }
@@ -288,6 +313,7 @@ final class AppModel: ObservableObject {
             briefing = try await api.get("briefing.json", as: Briefing.self).value
             briefingError = nil
         } catch {
+            if APIClient.isCancellation(error) { return }
             briefingError = error.localizedDescription
         }
     }

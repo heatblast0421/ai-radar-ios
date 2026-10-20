@@ -10,6 +10,10 @@ final class ItemDetailModel: ObservableObject {
     init(id: String) { self.id = id }
 
     func load() async {
+        await Task { await self.performLoad() }.value
+    }
+
+    private func performLoad() async {
         let path = "items/\(id).json"
         if detail == nil, let cached = APIClient.shared.cached(path, as: ItemDetail.self) {
             detail = cached.value

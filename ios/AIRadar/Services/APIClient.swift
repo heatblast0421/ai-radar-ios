@@ -86,14 +86,19 @@ final class APIClient {
                 throw APIError.decoding(String(describing: error))
             }
         } catch {
+            // A cancelled request (e.g. iOS ending a pull-to-refresh early) is not "offline".
+            if APIClient.isCancellation(error) { throw CancellationError() }
             if case APIError.notFound = error { throw error }
             if allowStale, let cached = cache.load(for: path), let value = try? decoder.decode(T.self, from: cached.data) {
                 return Loaded(value: value, isStale: true, fetchedAt: cached.date)
             }
             if let apiError = error as? APIError { throw apiError }
-            if (error as? URLError)?.code == .cancelled { throw error }
             throw APIError.offline
         }
+    }
+
+    static func isCancellation(_ error: Error) -> Bool {
+        error is CancellationError || (error as? URLError)?.code == .cancelled
     }
 
     /// Cached copy only (used for instant display before the network answers).

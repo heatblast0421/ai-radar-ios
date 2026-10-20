@@ -9,6 +9,10 @@ final class SearchModel: ObservableObject {
     @Published var staleSince: Date?
 
     func load() async {
+        await Task { await self.performLoad() }.value
+    }
+
+    private func performLoad() async {
         if index == nil, let cached = APIClient.shared.cached("search.json", as: SearchIndex.self) {
             index = cached.value
             staleSince = cached.fetchedAt
