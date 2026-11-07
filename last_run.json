@@ -1,0 +1,165 @@
+{
+ "started_at": "2026-11-07T12:20:53Z",
+ "sources": [
+  {
+   "source": "hackernews",
+   "ok": true,
+   "fetched": 230,
+   "new": 0,
+   "updated": 12,
+   "not_modified": false,
+   "notes": [],
+   "seconds": 0.4
+  },
+  {
+   "source": "openai-news",
+   "ok": true,
+   "fetched": 1368,
+   "new": 0,
+   "updated": 0,
+   "not_modified": false,
+   "notes": [],
+   "seconds": 0.5
+  },
+  {
+   "source": "google-deepmind",
+   "ok": true,
+   "fetched": 100,
+   "new": 0,
+   "updated": 0,
+   "not_modified": false,
+   "notes": [],
+   "seconds": 0.1
+  },
+  {
+   "source": "google-ai",
+   "ok": true,
+   "fetched": 20,
+   "new": 0,
+   "updated": 0,
+   "not_modified": false,
+   "notes": [],
+   "seconds": 0.2
+  },
+  {
+   "source": "google-research",
+   "ok": true,
+   "fetched": 100,
+   "new": 0,
+   "updated": 0,
+   "not_modified": false,
+   "notes": [],
+   "seconds": 0.3
+  },
+  {
+   "source": "huggingface-blog",
+   "ok": true,
+   "fetched": 0,
+   "new": 0,
+   "updated": 0,
+   "not_modified": true,
+   "notes": [
+    "not modified"
+   ],
+   "seconds": 0.1
+  },
+  {
+   "source": "microsoft-research",
+   "ok": true,
+   "fetched": 0,
+   "new": 0,
+   "updated": 0,
+   "not_modified": true,
+   "notes": [
+    "not modified"
+   ],
+   "seconds": 0.6
+  },
+  {
+   "source": "nvidia-developer",
+   "ok": true,
+   "fetched": 0,
+   "new": 0,
+   "updated": 0,
+   "not_modified": true,
+   "notes": [
+    "not modified"
+   ],
+   "seconds": 0.2
+  },
+  {
+   "source": "github-blog-ai",
+   "ok": true,
+   "fetched": 0,
+   "new": 0,
+   "updated": 0,
+   "not_modified": true,
+   "notes": [
+    "not modified"
+   ],
+   "seconds": 0.1
+  },
+  {
+   "source": "aws-ml",
+   "ok": true,
+   "fetched": 0,
+   "new": 0,
+   "updated": 0,
+   "not_modified": true,
+   "notes": [
+    "not modified"
+   ],
+   "seconds": 0.2
+  },
+  {
+   "source": "cloudflare-ai",
+   "ok": true,
+   "fetched": 20,
+   "new": 0,
+   "updated": 0,
+   "not_modified": false,
+   "notes": [],
+   "seconds": 0.2
+  },
+  {
+   "source": "meta-engineering",
+   "ok": true,
+   "fetched": 0,
+   "new": 0,
+   "updated": 0,
+   "not_modified": true,
+   "notes": [
+    "not modified"
+   ],
+   "seconds": 0.1
+  }
+ ],
+ "groups": [
+  "hackernews",
+  "rss_official"
+ ],
+ "repos_scored": 1244,
+ "repo_items": 40,
+ "items_scored": 4062,
+ "stories_grouped": 16,
+ "llm": {
+  "quick": 0,
+  "deep": 0,
+  "calls": 0,
+  "stopped": null,
+  "provider": "gemini",
+  "model": null
+ },
+ "briefing": null,
+ "pruned": 0,
+ "export": {
+  "items": 3678,
+  "pulse": 1990,
+  "research": 2329,
+  "lab": 637,
+  "industry": 508,
+  "repos": 1244
+ },
+ "finished_at": "2026-11-07T12:21:13Z",
+ "seconds": 20.9
+}
