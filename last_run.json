@@ -1,0 +1,313 @@
+{
+ "started_at": "2026-11-14T21:15:47Z",
+ "sources": [
+  {
+   "source": "hackernews",
+   "ok": true,
+   "fetched": 217,
+   "new": 1,
+   "updated": 29,
+   "not_modified": false,
+   "notes": [],
+   "seconds": 0.4
+  },
+  {
+   "source": "openai-news",
+   "ok": true,
+   "fetched": 1387,
+   "new": 0,
+   "updated": 0,
+   "not_modified": false,
+   "notes": [],
+   "seconds": 0.6
+  },
+  {
+   "source": "google-deepmind",
+   "ok": true,
+   "fetched": 100,
+   "new": 0,
+   "updated": 0,
+   "not_modified": false,
+   "notes": [],
+   "seconds": 0.4
+  },
+  {
+   "source": "google-ai",
+   "ok": true,
+   "fetched": 20,
+   "new": 0,
+   "updated": 0,
+   "not_modified": false,
+   "notes": [],
+   "seconds": 0.2
+  },
+  {
+   "source": "google-research",
+   "ok": true,
+   "fetched": 100,
+   "new": 0,
+   "updated": 0,
+   "not_modified": false,
+   "notes": [],
+   "seconds": 0.4
+  },
+  {
+   "source": "huggingface-blog",
+   "ok": true,
+   "fetched": 0,
+   "new": 0,
+   "updated": 0,
+   "not_modified": true,
+   "notes": [
+    "not modified"
+   ],
+   "seconds": 0.1
+  },
+  {
+   "source": "microsoft-research",
+   "ok": true,
+   "fetched": 0,
+   "new": 0,
+   "updated": 0,
+   "not_modified": true,
+   "notes": [
+    "not modified"
+   ],
+   "seconds": 0.3
+  },
+  {
+   "source": "nvidia-developer",
+   "ok": true,
+   "fetched": 0,
+   "new": 0,
+   "updated": 0,
+   "not_modified": true,
+   "notes": [
+    "not modified"
+   ],
+   "seconds": 0.2
+  },
+  {
+   "source": "github-blog-ai",
+   "ok": true,
+   "fetched": 0,
+   "new": 0,
+   "updated": 0,
+   "not_modified": true,
+   "notes": [
+    "not modified"
+   ],
+   "seconds": 0.0
+  },
+  {
+   "source": "aws-ml",
+   "ok": true,
+   "fetched": 0,
+   "new": 0,
+   "updated": 0,
+   "not_modified": true,
+   "notes": [
+    "not modified"
+   ],
+   "seconds": 0.1
+  },
+  {
+   "source": "cloudflare-ai",
+   "ok": true,
+   "fetched": 20,
+   "new": 0,
+   "updated": 0,
+   "not_modified": false,
+   "notes": [],
+   "seconds": 0.2
+  },
+  {
+   "source": "meta-engineering",
+   "ok": true,
+   "fetched": 0,
+   "new": 0,
+   "updated": 0,
+   "not_modified": true,
+   "notes": [
+    "not modified"
+   ],
+   "seconds": 0.1
+  },
+  {
+   "source": "simonwillison",
+   "ok": true,
+   "fetched": 0,
+   "new": 0,
+   "updated": 0,
+   "not_modified": true,
+   "notes": [
+    "not modified"
+   ],
+   "seconds": 0.1
+  },
+  {
+   "source": "latent-space",
+   "ok": true,
+   "fetched": 20,
+   "new": 0,
+   "updated": 0,
+   "not_modified": false,
+   "notes": [],
+   "seconds": 0.9
+  },
+  {
+   "source": "interconnects",
+   "ok": true,
+   "fetched": 20,
+   "new": 0,
+   "updated": 0,
+   "not_modified": false,
+   "notes": [],
+   "seconds": 0.2
+  },
+  {
+   "source": "raschka",
+   "ok": true,
+   "fetched": 20,
+   "new": 0,
+   "updated": 0,
+   "not_modified": false,
+   "notes": [],
+   "seconds": 0.7
+  },
+  {
+   "source": "lilianweng",
+   "ok": true,
+   "fetched": 0,
+   "new": 0,
+   "updated": 0,
+   "not_modified": true,
+   "notes": [
+    "not modified"
+   ],
+   "seconds": 0.0
+  },
+  {
+   "source": "chiphuyen",
+   "ok": true,
+   "fetched": 0,
+   "new": 0,
+   "updated": 0,
+   "not_modified": true,
+   "notes": [
+    "not modified"
+   ],
+   "seconds": 0.1
+  },
+  {
+   "source": "eugeneyan",
+   "ok": true,
+   "fetched": 0,
+   "new": 0,
+   "updated": 0,
+   "not_modified": true,
+   "notes": [
+    "not modified"
+   ],
+   "seconds": 0.1
+  },
+  {
+   "source": "lobsters-ai",
+   "ok": true,
+   "fetched": 25,
+   "new": 0,
+   "updated": 0,
+   "not_modified": false,
+   "notes": [],
+   "seconds": 0.4
+  },
+  {
+   "source": "techcrunch-ai",
+   "ok": true,
+   "fetched": 20,
+   "new": 0,
+   "updated": 0,
+   "not_modified": false,
+   "notes": [],
+   "seconds": 0.1
+  },
+  {
+   "source": "venturebeat-ai",
+   "ok": false,
+   "error": "FetchError: HTTP 429 (rate limited / unavailable) for https://venturebeat.com/category/ai/feed/",
+   "seconds": 14.3
+  },
+  {
+   "source": "theverge-ai",
+   "ok": true,
+   "fetched": 10,
+   "new": 0,
+   "updated": 0,
+   "not_modified": false,
+   "notes": [],
+   "seconds": 0.2
+  },
+  {
+   "source": "arstechnica-ai",
+   "ok": true,
+   "fetched": 20,
+   "new": 0,
+   "updated": 0,
+   "not_modified": false,
+   "notes": [],
+   "seconds": 0.2
+  },
+  {
+   "source": "mit-tech-review-ai",
+   "ok": true,
+   "fetched": 0,
+   "new": 0,
+   "updated": 0,
+   "not_modified": true,
+   "notes": [
+    "not modified"
+   ],
+   "seconds": 0.1
+  },
+  {
+   "source": "github-releases",
+   "ok": true,
+   "fetched": 196,
+   "new": 0,
+   "updated": 73,
+   "not_modified": false,
+   "notes": [],
+   "seconds": 5.9
+  }
+ ],
+ "groups": [
+  "hackernews",
+  "rss_official",
+  "rss_engineering",
+  "rss_industry",
+  "github_releases"
+ ],
+ "repos_scored": 1593,
+ "repo_items": 40,
+ "items_scored": 5224,
+ "stories_grouped": 12,
+ "llm": {
+  "quick": 1,
+  "deep": 4,
+  "calls": 5,
+  "stopped": null,
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite"
+ },
+ "briefing": null,
+ "export": {
+  "items": 4733,
+  "pulse": 2523,
+  "research": 2982,
+  "lab": 809,
+  "industry": 672,
+  "repos": 1593
+ },
+ "finished_at": "2026-11-14T21:17:16Z",
+ "seconds": 89.1
+}
